@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="GameSceneSkin" width="512" height="768" xmlns:e="http://ns.egret.com/eui"
+        xmlns:w="http://ns.egret.com/wing">
+	<w:Config id="16946c4d0a4"></w:Config>
+	<e:Image id="bgTop1" source="top_png" x="0" y="0" />
+	<e:Image id="bgTop2" source="top_png" x="-1080" y="0" />
+	<e:Image id="badge" source="logo_png" x="75" y="0" />
+	<e:Image id="bg1" source="road_png" x="0" y="214" />
+	<e:Image id="bg2" source="road_png" x="-1080" y="214" />
+	<e:Image id="bg3" source="endRoad_png" x="-1080" y="94" />
+</e:Skin>
