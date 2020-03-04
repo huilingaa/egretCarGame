@@ -6,10 +6,6 @@ class GameScene extends eui.Component implements eui.UIComponent {
 	private bgTop1: eui.Image;
 	private bgTop2: eui.Image;
 	private bgSpeed: number = 1.4; //越大越快
-	// 实例化
-	private gameOther: gameOther;
-	public fire: egret.Bitmap
-	private tool: tool;
 	// btn相关属性
 	private btn1: btnSort;
 	private btn2: btnSort;
@@ -40,6 +36,11 @@ class GameScene extends eui.Component implements eui.UIComponent {
 		this.BaseCarA, this.BaseCarB, this.BaseCarC,
 		this.BaseCarD, this.BaseCarE, this.BaseCarF,
 		this.BaseCarG, this.BaseCarH, this.BaseCarI, this.BaseCarJ];
+	// 实例化
+	private gameOther: gameOther;
+	public fire: egret.Bitmap
+	private tool: tool;
+	public gameOverScene: GameOverScene;
 	// 声明的数据
 	private outSide: any;
 	private timeInterval: number = 1 / 60 * 1000
@@ -48,6 +49,8 @@ class GameScene extends eui.Component implements eui.UIComponent {
 	public lockTime: number = 100;
 	public timeoutId: number;
 	public indexCar: number;
+	public arraySelect: number[][];
+
 	public count: number = -1;
 	public setIntervalcount: number = 0;
 	private scores: egret.TextField
@@ -68,14 +71,19 @@ class GameScene extends eui.Component implements eui.UIComponent {
 		this.addEventListener(egret.Event.ENTER_FRAME, this.onEnterFrame, this)
 		this.timeOnEnterFrame = egret.getTimer();
 	}
-
+	//实例化场景和动画加载
 	private init() {
 		this.gameOther = new gameOther()
+		this.gameOther.onFont('20200221173', '11:45');
 		this.addChild(this.gameOther)
 		this.tool = new tool()
 		var outSide = this.tool.gitData();
 		this.array = outSide.returna
 		this.arrayBtn = outSide.returnb
+		this.arraySelect = outSide.returnc
+		console.log(this.arraySelect);
+		//  console.log(this.array);
+		//  console.log(this.arrayBtn);
 		var distanceX = [144, 131, 119, 108, 96, 84, 78, 62, 50, 38];
 		for (var i = 0; i < 10; i++) {
 			this.carName[i] = new BaseCar()
@@ -83,20 +91,20 @@ class GameScene extends eui.Component implements eui.UIComponent {
 			this.carName[i].onGroupComplete((i));
 			this.addChild(this.carName[i])
 			this.btnName[i] = new btnSort((i + 1) + '_png')
-			this.btnName[i].appear(83.8 * i + 170, 106)
+			this.btnName[i].appear(83.7 * i + 164, 106)
 			this.addChild(this.btnName[i])
 		}
-		var that = this;
 		// 加速火苗
-		setInterval(function () {
-			if (that.setIntervalcount < 10) {
-				that.indexCar = that.arrayBtn[that.setIntervalcount].indexOf(Math.min.apply(Math, that.arrayBtn[that.setIntervalcount]));
-				that.carName[that.indexCar].speedUp()
-				that.setIntervalcount++;
-			}
-		}, 1500)
+		// var that = this;
+		// setInterval(function () {
+		// 	if (that.setIntervalcount < 10) {
+		// 		that.indexCar = that.arrayBtn[that.setIntervalcount].indexOf(Math.min.apply(Math, that.arrayBtn[that.setIntervalcount]));
+		// 		that.carName[that.indexCar].speedUp()
+		// 		that.setIntervalcount++;
+		// 	}
+		// }, 1500)
 	}
-
+	//背景小车
 	private onEnterFrame(e: egret.Event) {
 		var now = egret.getTimer();
 		var time = this.timeOnEnterFrame;
@@ -109,7 +117,7 @@ class GameScene extends eui.Component implements eui.UIComponent {
 		if (this.countTemp >= 90) {
 			this.scrollBg(pass)
 		}
-		if (this.count <= this.array[0].length) {
+		if (this.count < this.array[0].length - 1) {
 			if (this.countTemp % 90 == 0) {
 				this.carRun();
 			}
@@ -117,7 +125,8 @@ class GameScene extends eui.Component implements eui.UIComponent {
 			this.removeEventListener(egret.Event.ENTER_FRAME, this.onEnterFrame, this);
 		}
 	}
-	//背景
+
+
 	private scrollBg(pass: number) {
 		if (this.count < this.array[0].length - 1) {
 			const delX = this.bgSpeed * pass
@@ -138,24 +147,30 @@ class GameScene extends eui.Component implements eui.UIComponent {
 			this.bg3.x = 0
 		}
 	}
-	//小车
+
+
 	private carRun() {
+
 		this.count++;
+
 		if (this.count < 10) {
+			console.log(this.count, this.arraySelect[this.count]);
+			// var that = this;
+			this.arraySelect[this.count].map(item => { // item为数组的元素
+				if (item) {
+					this.carName[item - 1].speedUp()
+				}
+
+			})
 			for (var i = 0; i < 10; i++) {
 				this.carName[i].startAnimation();
-				this.carName[i].fly(this.array[i][this.count], 214 + 56 + 64 * (9 - i), 1500)
-				this.btnName[i].fly((this.arrayBtn[this.count][i] - 1) * 83.8 + 170, 106, 4000)
+				console.log(this.count, this.arraySelect[this.count]);
+
+				this.carName[i].fly(this.array[this.count][i], 214 + 56 + 64 * (9 - i), 1500)
+				this.btnName[i].fly((this.arrayBtn[this.count][i] - 1) * 83.7 + 164, 106, 4000)
 			}
+
 		}
-		
+
 	}
-
-	// private gameOver() {
-	// 	this.removeListener()
-	// 	egret.Tween.removeTweens(this.heroPlane)
-	// 	Sound.close()
-	// 	Global.addScene(new GameOverScene(this.score.text))
-	// }
-
 }

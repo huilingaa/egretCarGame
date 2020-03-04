@@ -15,18 +15,18 @@ class BaseCar extends egret.DisplayObjectContainer {
 		await RES.loadConfig("resource/default.res.json", "resource/");
 		await RES.loadGroup("preload");
 	}
-
+	// 小车初始化位置
 	public appear(x: number, y: number) {
 		this.x = x
 		this.y = y
 	}
-
+	//小车移动
 	public fly(x: number, y: number, speed: number) {
 		egret.Tween.removeTweens(this)
 		var tw = egret.Tween.get(this, {});
 		tw.to({ x, y }, speed, egret.Ease.sineOut)
 	}
-
+	//轮胎转动
 	private startAnimation(): void {
 		for (var j = 0; j < 2; j++) {
 			if (this.timberInterval[j]) {
@@ -39,7 +39,7 @@ class BaseCar extends egret.DisplayObjectContainer {
 			}, .2)
 		}
 	}
-	// 加速火苗
+	//加速火苗
 	private speedUp(i): void {
 		var that = this;
 		this.fire = new egret.Bitmap();
@@ -54,11 +54,7 @@ class BaseCar extends egret.DisplayObjectContainer {
 		}, 1500)
 	}
 
-	private speedClear(): void {
-		this.removeChild(this.fire);
-	}
-
-	//初始化小车
+	//初始化小车样式
 	public onGroupComplete(i) {
 		var img: egret.Bitmap = new egret.Bitmap();
 		img.texture = RES.getRes('car' + (i + 1) + '_png');

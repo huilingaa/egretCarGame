@@ -4,8 +4,12 @@
 	<w:Config id="16946c4d0a4"></w:Config>
 	<e:Image id="bgTop1" source="top_png" x="0" y="0" />
 	<e:Image id="bgTop2" source="top_png" x="-1080" y="0" />
-	<e:Image id="badge" source="logo_png" x="75" y="0" />
+	<e:Image id="badge" source="logo_png" x="69" y="0" />
 	<e:Image id="bg1" source="road_png" x="0" y="214" />
 	<e:Image id="bg2" source="road_png" x="-1080" y="214" />
 	<e:Image id="bg3" source="endRoad_png" x="-1080" y="94" />
+	<e:Image id="left" source="left_png" y="20" x=".5" />
+	<e:Image id="right" source="right_png" y="20" x="960" />
+	<e:Image id="leftS" source="leftSquare_png" y="20" x="147" />
+	<e:Image id="rightS" source="rightSquare_png" y="20" x="652" />
 </e:Skin>

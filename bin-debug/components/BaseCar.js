@@ -43,17 +43,20 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-var gameOther = (function (_super) {
-    __extends(gameOther, _super);
-    function gameOther() {
-        var _this = _super.call(this) || this;
-        _this.switchOpen = true;
-        _this.control = true;
-        _this.onGroupComplete();
-        _this.addEventListener(egret.Event.ADDED_TO_STAGE, _this.onAddToStage, _this);
+var BaseCar = (function (_super) {
+    __extends(BaseCar, _super);
+    function BaseCar() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.timberInterval = [
+            _this.timberInterval1, _this.timberInterval1
+        ];
+        _this.rotations = 10;
+        _this.lunArray = [
+            _this.lun1, _this.lun2
+        ];
         return _this;
     }
-    gameOther.prototype.onAddToStage = function (event) {
+    BaseCar.prototype.onAddToStage = function (event) {
         return __awaiter(this, void 0, void 0, function () {
             return __generator(this, function (_a) {
                 switch (_a.label) {
@@ -70,44 +73,64 @@ var gameOther = (function (_super) {
             });
         });
     };
-    gameOther.prototype.onGroupComplete = function () {
-        var imgleft = new egret.Bitmap();
-        imgleft.texture = RES.getRes("left_png");
-        this.addChild(imgleft);
-        imgleft.y = 20;
-        imgleft.x = 0.5;
-        var imgright = new egret.Bitmap();
-        imgright.texture = RES.getRes("right_png");
-        this.addChild(imgright);
-        imgright.y = 20;
-        imgright.x = 967;
-        var leftTime = new egret.Bitmap();
-        leftTime.texture = RES.getRes("calendar_png");
-        this.addChild(leftTime);
-        leftTime.y = 53;
-        leftTime.x = 20;
-        // 声音
-        this.onSound(RES.getRes("shengyin_png"));
+    // 小车初始化位置
+    BaseCar.prototype.appear = function (x, y) {
+        this.x = x;
+        this.y = y;
     };
-    gameOther.prototype.onSound = function (instance) {
-        this.rightSound = new egret.Bitmap();
-        this.rightSound.texture = instance;
-        this.addChild(this.rightSound);
-        this.rightSound.y = 53;
-        this.rightSound.x = 1060 - this.rightSound.width;
-        this.rightSound.touchEnabled = true;
-        this.rightSound.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onTouch, this);
+    //小车移动
+    BaseCar.prototype.fly = function (x, y, speed) {
+        egret.Tween.removeTweens(this);
+        var tw = egret.Tween.get(this, {});
+        tw.to({ x: x, y: y }, speed, egret.Ease.sineOut);
     };
-    gameOther.prototype.onTouch = function (instance) {
-        if (this.switchOpen) {
-            this.removeChild(this.rightSound);
+    //轮胎转动
+    BaseCar.prototype.startAnimation = function () {
+        var _this = this;
+        for (var j = 0; j < 2; j++) {
+            if (this.timberInterval[j]) {
+                clearInterval(this.timberInterval[j]);
+            }
+            this.lunArray[j].rotation = 360;
+            this.timberInterval[j] = setInterval(function () {
+                _this.lunArray[0].rotation -= _this.rotations;
+                _this.lunArray[1].rotation -= _this.rotations;
+            }, .2);
         }
-        else {
-            this.addChild(this.rightSound);
-        }
-        this.switchOpen = !this.switchOpen;
     };
-    return gameOther;
+    //加速火苗
+    BaseCar.prototype.speedUp = function (i) {
+        var that = this;
+        this.fire = new egret.Bitmap();
+        this.fire.texture = RES.getRes("fire_png");
+        this.addChild(this.fire);
+        this.fire.y = 30;
+        this.fire.x = 202;
+        setTimeout(function () {
+            if (that.fire) {
+                that.removeChild(that.fire);
+            }
+        }, 1500);
+    };
+    //初始化小车样式
+    BaseCar.prototype.onGroupComplete = function (i) {
+        var img = new egret.Bitmap();
+        img.texture = RES.getRes('car' + (i + 1) + '_png');
+        this.addChild(img);
+        for (var j = 0; j < 2; j++) {
+            this.lunArray[j] = new egret.Bitmap();
+            this.lunArray[j].texture = RES.getRes("lun_png");
+            this.addChild(this.lunArray[j]);
+            this.lunArray[j].y = img.y + 32;
+            this.lunArray[j].anchorOffsetX = this.lunArray[j].width / 2;
+            this.lunArray[j].anchorOffsetY = this.lunArray[j].height / 2;
+            this.lunArray[j].x = this.lunArray[j].x + this.lunArray[j].anchorOffsetX;
+            this.lunArray[j].y = this.lunArray[j].y + this.lunArray[j].anchorOffsetY;
+        }
+        this.lunArray[0].x = 15 + 29;
+        this.lunArray[1].x = 15 + 147;
+    };
+    return BaseCar;
 }(egret.DisplayObjectContainer));
-__reflect(gameOther.prototype, "gameOther");
-//# sourceMappingURL=gameOther.js.map
+__reflect(BaseCar.prototype, "BaseCar");
+//# sourceMappingURL=BaseCar.js.map

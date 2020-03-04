@@ -23,21 +23,21 @@ var tool = (function () {
         for (var i = 0; i < 10; i++) {
             var s = JSON.parse(JSON.stringify(temp));
             var sortNum = s.sort(this.sortNumber);
-            var aa = [];
-            temp.map(function (item) {
-                aa.push(sortNum.indexOf(item) + 1);
+            var arr = [];
+            // 转成大小顺序比
+            temp.map(function (item, index) {
+                arr.push(sortNum.indexOf(item) + 1);
             });
-            return aa;
+            //消除相同留白的
+            var tmp = [];
+            arr.forEach(function (item, index) {
+                if (arr.indexOf(item) !== arr.lastIndexOf(item) && tmp.indexOf(item) === -1) {
+                    tmp.push(item);
+                    arr[index] = item + 1;
+                }
+            });
+            return arr;
         }
-    };
-    tool.prototype.array_max = function (arr) {
-        var max = arr[0];
-        for (var i in arr) {
-            if (arr[i] > max) {
-                max = arr[i];
-            }
-        }
-        return max;
     };
     tool.prototype.reverse = function (arr) {
         for (var i = 0; i < arr.length; i++) {
@@ -59,10 +59,31 @@ var tool = (function () {
                 this.array[i][9] = -this.random_num(243, 1080);
             }
         }
-        var reverseNum = JSON.parse(JSON.stringify(this.array));
-        var aa = this.reverse(reverseNum);
-        this.arrayBtn = this.soo(aa);
-        return { returna: this.array, returnb: this.arrayBtn, returnc: aa };
+        var reverse = this.reverse(JSON.parse(JSON.stringify(this.array)));
+        this.arrayBtn = this.soo(reverse);
+        // ...__define......__define...__define.
+        this.newFire = JSON.parse(JSON.stringify(reverse));
+        console.log(this.newFire);
+        var arr = [];
+        var n = 1;
+        for (var i = 0; i < 10; i++) {
+            arr[i] = [];
+            for (var j = 0; j < 10; j++) {
+                if (i == 0) {
+                    if (this.newFire[0][j] > 600) {
+                        arr[0].push(j);
+                    }
+                }
+                if (i > 0) {
+                    // console.log(Math.abs(this.newFire[i][j] - this.newFire[i - 1][j]));
+                    if (this.newFire[i][j] - this.newFire[i - 1][j] >= 600) {
+                        arr[i].push(j);
+                    }
+                }
+            }
+        }
+        console.log(arr);
+        return { returna: this.newFire, returnb: this.arrayBtn, returnc: arr };
     };
     return tool;
 }());

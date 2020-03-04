@@ -12,23 +12,33 @@ class gameOther extends egret.DisplayObjectContainer {
         await RES.loadConfig("resource/default.res.json", "resource/");
         await RES.loadGroup("preload");
     }
+    // 文字
+    public onFont(font1: string, font2: string) {
+        var label1: egret.TextField = new egret.TextField();
+        var label2: egret.TextField = new egret.TextField();
+        var fontArray = [label1, label2];
+        for (var i in [0, 1]) {
+            this.addChild(fontArray[i]);
+            fontArray[i].y = 20
+            fontArray[0].x = 147
+            fontArray[1].x = 652
+            fontArray[i].width = 281;
+            fontArray[i].height = 52;
+            fontArray[i].size = 22;
+            fontArray[i].textAlign = egret.HorizontalAlign.CENTER;
+            fontArray[i].verticalAlign = egret.VerticalAlign.MIDDLE;
+            fontArray[i].textColor = 0xffffff;
+            fontArray[0].text = "下期时间:" + font1;
+            fontArray[1].text = "期号:" + font2;
+        }
+    }
+    // 音乐样式与音乐
     public onGroupComplete() {
-        var imgleft: egret.Bitmap = new egret.Bitmap();
-        imgleft.texture = RES.getRes("left_png");
-        this.addChild(imgleft);
-        imgleft.y = 20
-        imgleft.x = 0.5
-        var imgright: egret.Bitmap = new egret.Bitmap();
-        imgright.texture = RES.getRes("right_png");
-        this.addChild(imgright);
-        imgright.y = 20
-        imgright.x = 967
         var leftTime: egret.Bitmap = new egret.Bitmap();
         leftTime.texture = RES.getRes("calendar_png");
         this.addChild(leftTime);
         leftTime.y = 53
         leftTime.x = 20
-        // 声音
         this.onSound(RES.getRes("shengyin_png"));
     }
     public onSound(instance: any) {
@@ -36,7 +46,7 @@ class gameOther extends egret.DisplayObjectContainer {
         this.rightSound.texture = instance;
         this.addChild(this.rightSound);
         this.rightSound.y = 53
-        this.rightSound.x = 1060 - this.rightSound.width
+        this.rightSound.x = 1050 - this.rightSound.width
         this.rightSound.touchEnabled = true;
         this.rightSound.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onTouch, this);
     }

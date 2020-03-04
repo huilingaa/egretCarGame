@@ -179,12 +179,22 @@
 			"name": "endRoad_png",
 			"type": "image",
 			"url": "assets/bg/endRoad.png"
+		},
+		{
+			"name": "rightSquare_png",
+			"type": "image",
+			"url": "assets/bg/rightSquare.png"
+		},
+		{
+			"name": "leftSquare_png",
+			"type": "image",
+			"url": "assets/bg/leftSquare.png"
 		}
 	],
 	"groups": [
 		{
 			"name": "preload",
-			"keys": "left_png,right_png,road_png,top_png,1_png,10_png,2_png,3_png,4_png,5_png,6_png,7_png,8_png,9_png,lun_png,font_fnt,font_png,bullet_mp3,StarWar_mp3,description_json,fire_png,car9_png,car1_png,car2_png,car3_png,car4_png,car5_png,car6_png,car7_png,car8_png,shengyin_png,calendar_png,logo_png,car10_png,rightClose_png,endRoad_png"
+			"keys": "left_png,right_png,road_png,top_png,1_png,10_png,2_png,3_png,4_png,5_png,6_png,7_png,8_png,9_png,lun_png,font_fnt,font_png,bullet_mp3,StarWar_mp3,description_json,fire_png,car9_png,car1_png,car2_png,car3_png,car4_png,car5_png,car6_png,car7_png,car8_png,shengyin_png,calendar_png,logo_png,car10_png,rightClose_png,endRoad_png,rightSquare_png,leftSquare_png"
 		}
 	]
 }

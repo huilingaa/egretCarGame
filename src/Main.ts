@@ -77,9 +77,6 @@ class Main extends egret.DisplayObjectContainer {
      * Create a game scene
      */
     private createGameScene() {
-
-
-
         Global.addScene(new GameScene())
     }
 }
