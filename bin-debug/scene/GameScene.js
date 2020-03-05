@@ -44,16 +44,13 @@ var GameScene = (function (_super) {
     //实例化场景和动画加载
     GameScene.prototype.init = function () {
         this.gameOther = new gameOther();
-        this.gameOther.onFont('20200221173', '11:45');
+        this.gameOther.onFont('20200221173', '11:45', 0);
         this.addChild(this.gameOther);
         this.tool = new tool();
         var outSide = this.tool.gitData();
-        this.array = outSide.returna;
-        this.arrayBtn = outSide.returnb;
-        this.arraySelect = outSide.returnc;
-        console.log(this.arraySelect);
-        //  console.log(this.array);
-        //  console.log(this.arrayBtn);
+        this.array = outSide.returna; //每次距离
+        this.arrayBtn = outSide.returnb; //排序编号
+        this.arraySelect = outSide.returnc; //火苗
         var distanceX = [144, 131, 119, 108, 96, 84, 78, 62, 50, 38];
         for (var i = 0; i < 10; i++) {
             this.carName[i] = new BaseCar();
@@ -64,15 +61,6 @@ var GameScene = (function (_super) {
             this.btnName[i].appear(83.7 * i + 164, 106);
             this.addChild(this.btnName[i]);
         }
-        // 加速火苗
-        // var that = this;
-        // setInterval(function () {
-        // 	if (that.setIntervalcount < 10) {
-        // 		that.indexCar = that.arrayBtn[that.setIntervalcount].indexOf(Math.min.apply(Math, that.arrayBtn[that.setIntervalcount]));
-        // 		that.carName[that.indexCar].speedUp()
-        // 		that.setIntervalcount++;
-        // 	}
-        // }, 1500)
     };
     //背景小车
     GameScene.prototype.onEnterFrame = function (e) {
@@ -121,18 +109,21 @@ var GameScene = (function (_super) {
         var _this = this;
         this.count++;
         if (this.count < 10) {
-            console.log(this.count, this.arraySelect[this.count]);
-            // var that = this;
+            //加速火苗
             this.arraySelect[this.count].map(function (item) {
                 if (item) {
                     _this.carName[item - 1].speedUp();
                 }
             });
             for (var i = 0; i < 10; i++) {
-                this.carName[i].startAnimation();
-                console.log(this.count, this.arraySelect[this.count]);
-                this.carName[i].fly(this.array[this.count][i], 214 + 56 + 64 * (9 - i), 1500);
-                this.btnName[i].fly((this.arrayBtn[this.count][i] - 1) * 83.7 + 164, 106, 4000);
+                this.carName[i].startAnimation(); //轮胎
+                if (this.count == 9) {
+                    this.carName[i].fly(this.array[this.count][i], 214 + 56 + 64 * (9 - i), 1500);
+                }
+                else {
+                    this.carName[i].fly(1080 - this.array[this.count][i], 214 + 56 + 64 * (9 - i), 1500);
+                }
+                this.btnName[i].fly(1080 - (this.arrayBtn[this.count][i]) * 83.7 - 83.7, 106, 4000);
             }
         }
     };

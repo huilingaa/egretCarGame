@@ -66,41 +66,33 @@ class tool {
 
 		var reverse = this.reverse(JSON.parse(JSON.stringify(this.array)));
 		this.arrayBtn = this.soo(reverse);
-		// ...__define......__define...__define.
 		this.newFire = JSON.parse(JSON.stringify(reverse))
-		console.log(this.newFire);
 		var arr = [];
-
 		var n = 1;
 		for (var i = 0; i < 10; i++) {
 			arr[i] = [];
-
 			for (var j = 0; j < 10; j++) {
-				if (i == 0) {
-					if (this.newFire[0][j] > 600) {
-						arr[0].push(j)
-					}
+				if (i == 0 && this.newFire[0][j] > 500) {
+					arr[0].push(j + 1)
 				}
 
-
-
-				if (i > 0) {
-					// console.log(Math.abs(this.newFire[i][j] - this.newFire[i - 1][j]));
-
-					if (this.newFire[i][j] - this.newFire[i - 1][j] >= 600) {
-
-						arr[i].push(j)
+				if (i > 0 && i < 9) {
+					if (this.newFire[i][j] - this.newFire[i - 1][j] >= 500) {
+						arr[i].push(j + 1)
 					}
 				}
-
+				if (i == 9) {
+					if (Math.abs(this.newFire[i][j] - this.newFire[i - 1][j]) >= 500) {
+						arr[i].push(j + 1)
+					}
+				}
 
 			}
 
 		}
 
-		console.log(arr);
 
-		return { returna: this.newFire , returnb: this.arrayBtn, returnc: arr };
+		return { returna: this.newFire, returnb: this.arrayBtn, returnc: arr };
 
 
 	}

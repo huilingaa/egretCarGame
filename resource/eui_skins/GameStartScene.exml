@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="GameSceneSkin" width="1080" height="1016" xmlns:e="http://ns.egret.com/eui"
+        xmlns:w="http://ns.egret.com/wing">
+	<w:Config id="16946c4d0a4"></w:Config>
+	<e:Image id="bg" source="startBg_png" x="0" y="0" />
+	<!--<e:Image id="left" source="left_png" y="20" x=".5" />
+	<e:Image id="right" source="right_png" y="20" x="960" />-->
+</e:Skin>

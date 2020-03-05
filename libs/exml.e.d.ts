@@ -10,7 +10,5 @@ declare class GameSceneSkin extends eui.Skin{
 }
 declare class imgCarSkin extends eui.Skin{
 }
-declare class MenuSceneSkin extends eui.Skin{
-}
 declare class toolSkin extends eui.Skin{
 }

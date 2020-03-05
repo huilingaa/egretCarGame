@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<e:Skin class="GameSceneSkin" width="512" height="768" xmlns:e="http://ns.egret.com/eui"
+<e:Skin class="GameSceneSkin" width="1080" height="1016" xmlns:e="http://ns.egret.com/eui"
         xmlns:w="http://ns.egret.com/wing">
 	<w:Config id="16946c4d0a4"></w:Config>
 	<e:Image id="bgTop1" source="top_png" x="0" y="0" />

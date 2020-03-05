@@ -16,7 +16,8 @@
 		"GameOverScene": "resource/eui_skins/GameOverScene.exml",
 		"boxSort": "resource/eui_skins/boxSort.exml",
 		"tool": "resource/eui_skins/tool.exml",
-		"imgCar": "resource/eui_skins/imgCar.exml"
+		"imgCar": "resource/eui_skins/imgCar.exml",
+		"GameStartScene": "resource/eui_skins/GameStartScene.exml"
 	},
 	"autoGenerateExmlsList": true,
 	"exmls": [
@@ -24,8 +25,8 @@
 		"resource/eui_skins/ButtonSkin.exml",
 		"resource/eui_skins/GameOverScene.exml",
 		"resource/eui_skins/GameScene.exml",
+		"resource/eui_skins/GameStartScene.exml",
 		"resource/eui_skins/imgCar.exml",
-		"resource/eui_skins/MenuScene.exml",
 		"resource/eui_skins/tool.exml"
 	],
 	"path": "resource/default.thm.json"

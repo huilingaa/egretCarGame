@@ -136,7 +136,7 @@ var Main = (function (_super) {
      * Create a game scene
      */
     Main.prototype.createGameScene = function () {
-        Global.addScene(new GameScene());
+        Global.addScene(new GameStartScene());
     };
     return Main;
 }(egret.DisplayObjectContainer));
