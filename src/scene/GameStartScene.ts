@@ -31,22 +31,17 @@ class GameStartScene extends eui.Component implements eui.UIComponent {
 		this.startCarG, this.startCarH, this.startCarI, this.startCarJ];
 	// 实例化
 	private gameOther: gameOther;
-
+	// public count: number = 3;
+	public countDown: egret.TextField;
 	// 项目公用方法
 	public constructor() {
 		super();
-		//创建一个计时器对象
-		var timer: egret.Timer = new egret.Timer(500, 5);
-		//注册事件侦听器
-		timer.addEventListener(egret.TimerEvent.TIMER, this.timerFunc, this);
-		timer.addEventListener(egret.TimerEvent.TIMER_COMPLETE, this.timerComFunc, this);
-		//开始计时
-		timer.start();
+		this.toggleMusic();
 	}
 	protected childrenCreated(): void {
 		super.childrenCreated();
 		this.init()
-		this.toggleMusic();
+
 		this.setListeners()
 	}
 	private setListeners() {
@@ -74,26 +69,31 @@ class GameStartScene extends eui.Component implements eui.UIComponent {
 	public toggleMusic() {
 		// 图片
 		var leftTime: egret.Bitmap = new egret.Bitmap();
-		leftTime.texture = RES.getRes("lamp2_png");
 		this.addChild(leftTime);
 		leftTime.y = 222
 		leftTime.x = 297
-		// 文字
-		var text: egret.TextField = new egret.TextField();
-		text.text = "3";
-		text.size = 124;
-		this.addChild(text);
-		text.fontFamily = 'Arial Black'
-		text.x = 497;
-		text.y = 523;
+		var that = this;
+		this.countDown = new egret.TextField();
+		this.addChild(this.countDown);
+		this.countDown.fontFamily = 'Arial Black'
+		this.countDown.x = 497;
+		this.countDown.y = 523;
+		this.countDown.size = 124;
+		var count = 3;
+		var countLight = 0;
+		leftTime.texture = RES.getRes("lamp0_png");
+		that.countDown.text = count.toString();
+		var countDown = setInterval(function () {
+			if (count > 0) {
+				count--;
+				countLight++;
+				leftTime.texture = RES.getRes("lamp" + countLight + "_png");
+				that.countDown.text = count.toString();
+			} else {
+				clearInterval(countDown);
+			}
 
-	}
-
-	private timerFunc() {
-		console.log("计时");
-	}
-	private timerComFunc() {
-		console.log("计时结束");
+		}, 1000)
 	}
 
 }

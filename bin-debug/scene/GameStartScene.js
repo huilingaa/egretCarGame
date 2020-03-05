@@ -23,19 +23,19 @@ var GameStartScene = (function (_super) {
             _this.startCarD, _this.startCarE, _this.startCarF,
             _this.startCarG, _this.startCarH, _this.startCarI, _this.startCarJ
         ];
-        //创建一个计时器对象
-        var timer = new egret.Timer(500, 5);
-        //注册事件侦听器
-        timer.addEventListener(egret.TimerEvent.TIMER, _this.timerFunc, _this);
-        timer.addEventListener(egret.TimerEvent.TIMER_COMPLETE, _this.timerComFunc, _this);
-        //开始计时
-        timer.start();
+        _this.toggleMusic();
         return _this;
+        // //创建一个计时器对象
+        // var timer: egret.Timer = new egret.Timer(1000, 3);
+        // //注册事件侦听器
+        // timer.addEventListener(egret.TimerEvent.TIMER, this.timerFunc, this);
+        // timer.addEventListener(egret.TimerEvent.TIMER_COMPLETE, this.timerComFunc, this);
+        // //开始计时
+        // timer.start();
     }
     GameStartScene.prototype.childrenCreated = function () {
         _super.prototype.childrenCreated.call(this);
         this.init();
-        this.toggleMusic();
         this.setListeners();
     };
     GameStartScene.prototype.setListeners = function () {
@@ -60,24 +60,31 @@ var GameStartScene = (function (_super) {
     GameStartScene.prototype.toggleMusic = function () {
         // 图片
         var leftTime = new egret.Bitmap();
-        leftTime.texture = RES.getRes("lamp2_png");
         this.addChild(leftTime);
         leftTime.y = 222;
         leftTime.x = 297;
-        // 文字
-        var text = new egret.TextField();
-        text.text = "3";
-        text.size = 124;
-        this.addChild(text);
-        text.fontFamily = 'Arial Black';
-        text.x = 497;
-        text.y = 523;
-    };
-    GameStartScene.prototype.timerFunc = function () {
-        console.log("计时");
-    };
-    GameStartScene.prototype.timerComFunc = function () {
-        console.log("计时结束");
+        var that = this;
+        this.countDown = new egret.TextField();
+        this.addChild(this.countDown);
+        this.countDown.fontFamily = 'Arial Black';
+        this.countDown.x = 497;
+        this.countDown.y = 523;
+        this.countDown.size = 124;
+        var count = 3;
+        var countLight = 0;
+        leftTime.texture = RES.getRes("lamp0_png");
+        that.countDown.text = count.toString();
+        var countDown = setInterval(function () {
+            if (count > 0) {
+                count--;
+                countLight++;
+                leftTime.texture = RES.getRes("lamp" + countLight + "_png");
+                that.countDown.text = count.toString();
+            }
+            else {
+                clearInterval(countDown);
+            }
+        }, 1000);
     };
     return GameStartScene;
 }(eui.Component));
