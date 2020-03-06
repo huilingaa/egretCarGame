@@ -63,7 +63,6 @@ var Main = (function (_super) {
         egret.lifecycle.onResume = function () {
             egret.ticker.resume();
         };
-        //inject the custom material parser
         //注入自定义的素材解析器
         var assetAdapter = new AssetAdapter();
         egret.registerImplementation("eui.IAssetAdapter", assetAdapter);
@@ -136,6 +135,8 @@ var Main = (function (_super) {
      * Create a game scene
      */
     Main.prototype.createGameScene = function () {
+        // Global.addScene(new GameScene())
+        // Global.addScene(new GameOverScene())
         Global.addScene(new GameStartScene());
     };
     return Main;

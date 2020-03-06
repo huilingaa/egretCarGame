@@ -11,154 +11,65 @@ r.prototype = e.prototype, t.prototype = new r();
 var GameOverScene = (function (_super) {
     __extends(GameOverScene, _super);
     function GameOverScene() {
-        var _this = _super.call(this) || this;
-        _this._pauseTime = 30;
-        _this.addEventListener(egret.Event.ADDED_TO_STAGE, _this.onAddToStage, _this);
-        return _this;
+        return _super.call(this) || this;
     }
-    GameOverScene.prototype.onAddToStage = function (event) {
-        this.loadSound();
+    GameOverScene.prototype.childrenCreated = function () {
+        _super.prototype.childrenCreated.call(this);
+        this.init();
     };
-    /*** 本示例关键代码段开始 ***/
-    //加载
-    GameOverScene.prototype.loadSound = function () {
-        var sound = this._sound = new egret.Sound();
-        ;
-        //sound 加载完成监听
-        sound.addEventListener(egret.Event.COMPLETE, function (e) {
-            this.init();
-        }, this);
-        sound.load("resource/assets/ccnn.mp3");
-    };
-    //播放
-    GameOverScene.prototype.play = function () {
-        //sound 播放会返回一个 SoundChannel 对象，暂停、音量等操作请控制此对象
-        this._channel = this._sound.play(this._pauseTime, 1);
-        this._channel.addEventListener(egret.Event.SOUND_COMPLETE, this.onComplete, this);
-        this.addEventListener(egret.Event.ENTER_FRAME, this.onTimeUpdate, this);
-    };
-    //停止
-    GameOverScene.prototype.stop = function () {
-        if (this._channel) {
-            this._channel.removeEventListener(egret.Event.SOUND_COMPLETE, this.onComplete, this);
-            this.removeEventListener(egret.Event.ENTER_FRAME, this.onTimeUpdate, this);
-            this._channel.stop();
-            this._channel = null;
-        }
-    };
-    //播放完成
-    GameOverScene.prototype.onComplete = function (e) {
-        console.log("播放完成");
-        this.stop();
-        this.setAllAbled(false);
-        this.setProgress(0);
-    };
-    //更新进度
-    GameOverScene.prototype.onTimeUpdate = function (e) {
-        var position = this._channel ? this._channel.position : 0;
-        this.setProgress(position);
-    };
-    GameOverScene.prototype.setProgress = function (position) {
-        this._updateTxt.text = position.toFixed(1) + "/" + this._sound.length.toFixed(1);
-        var w = (position / this._sound.length) * 400;
-        this._bar.x = w + this.stage.stageWidth / 2 - 200;
-        var mask = this._progress.mask || new egret.Rectangle(0, 0, 0, 60);
-        mask.x = w;
-        mask.width = 400 - w;
-        this._progress.mask = mask;
-    };
+    //初始化
     GameOverScene.prototype.init = function () {
-        var rap = 180;
-        var rapH = 200;
-        //play
-        var playTxt = this._playTxt = new egret.TextField();
-        playTxt.text = "播放";
-        playTxt.size = 60;
-        playTxt.x = 80;
-        playTxt.y = 200 + rapH;
-        playTxt.touchEnabled = true;
-        playTxt.addEventListener(egret.TouchEvent.TOUCH_TAP, function () {
-            this.play();
-            this.setAllAbled(true);
-        }, this);
-        this.addChild(playTxt);
-        //stop
-        var stopTxt = this._stopTxt = new egret.TextField();
-        stopTxt.text = "停止";
-        stopTxt.size = 60;
-        stopTxt.x = playTxt.x + rap * 1;
-        stopTxt.y = 200 + rapH;
-        stopTxt.touchEnabled = true;
-        stopTxt.addEventListener(egret.TouchEvent.TOUCH_TAP, function () {
-            if (this._channel) {
-                this._pauseTime = 0;
-                this.stop();
-                this.onTimeUpdate();
-            }
-            this.setAllAbled(false);
-        }, this);
-        this.addChild(stopTxt);
-        //pause 
-        var pauseTxt = this._pauseTxt = new egret.TextField();
-        pauseTxt.text = "暂停";
-        pauseTxt.size = 60;
-        pauseTxt.x = playTxt.x + rap * 2;
-        pauseTxt.y = 200 + rapH;
-        pauseTxt.touchEnabled = true;
-        pauseTxt.addEventListener(egret.TouchEvent.TOUCH_TAP, function () {
-            if (this._channel) {
-                this._pauseTime = this._channel.position;
-                this.stop();
-            }
-            this.setAllAbled(false);
-        }, this);
-        this.addChild(pauseTxt);
-        this.setAllAbled(false);
-        var bg = new egret.Shape();
-        this.addChild(bg);
-        bg.x = this.stage.stageWidth / 2 - 200;
-        bg.y = 100 - 5 + rapH;
-        bg.graphics.beginFill(0x999999);
-        bg.graphics.drawRoundRect(0, 0, 400, 10, 5, 5);
-        bg.graphics.endFill();
-        this._progress = new egret.Shape();
-        this.addChild(this._progress);
-        this._progress.x = this.stage.stageWidth / 2 - 200;
-        this._progress.y = 100 - 5 + rapH;
-        this._progress.graphics.beginFill(0xffff00);
-        this._progress.graphics.drawRoundRect(0, 0, 400, 10, 5, 5);
-        this._progress.graphics.endFill();
-        this._bar = new egret.Shape();
-        this.addChild(this._bar);
-        this._bar.x = this.stage.stageWidth / 2 - 200;
-        this._bar.y = 100 + rapH;
-        this._bar.graphics.beginFill(0xffff00);
-        this._bar.graphics.drawCircle(0, 0, 20);
-        this._bar.graphics.endFill();
-        this._updateTxt = new egret.TextField();
-        this._updateTxt.text = 0 + "/" + this._sound.length.toFixed(1);
-        this._updateTxt.width = 200;
-        this._updateTxt.size = 30;
-        this._updateTxt.x = this.stage.stageWidth / 2 - 100;
-        this._updateTxt.y = 50 + rapH;
-        this._updateTxt.textAlign = egret.HorizontalAlign.CENTER;
-        this.addChild(this._updateTxt);
-    };
-    GameOverScene.prototype.setAllAbled = function (isPlaying) {
-        this.setTextAbled(this._playTxt, !isPlaying);
-        this.setTextAbled(this._stopTxt, isPlaying);
-        this.setTextAbled(this._pauseTxt, isPlaying);
-    };
-    GameOverScene.prototype.setTextAbled = function (text, touchEnabled) {
-        text.touchEnabled = touchEnabled;
-        if (touchEnabled) {
-            text.textColor = 0xffffff;
+        this.gameOther = new gameOther();
+        this.gameOther.onFont('20200221173', '11:45', 'playOver');
+        this.addChild(this.gameOther);
+        var btnAry = [];
+        for (var i = 0; i < 10; i++) {
+            btnAry[i] = new btnSort((i + 1) + '_png');
+            btnAry[i].appear(102.9 * i + 79, 194);
+            btnAry[i].setScale(1.2);
+            this.addChild(btnAry[i]);
         }
-        else {
-            text.textColor = 0x999999;
-        }
+        var nameList = [3, 5, 10];
+        this.initImg(nameList);
+    };
+    GameOverScene.prototype.initImg = function (nameList) {
+        var _this = this;
+        var num = [{
+                x: 101, y: 676, scale: .66, fontX: 174, fontY: 390, width: 148, height: 140,
+            }, {
+                x: 702, y: 676, scale: .66, fontX: 767, fontY: 390, width: 148, height: 140,
+            }, {
+                x: 324, y: 676, scale: 1, fontX: 421, fontY: 348, width: 235, height: 233,
+            },];
+        var imgArr = [];
+        var fontArr = [];
+        num.forEach(function (item, index) {
+            // 图片
+            imgArr[index] = new egret.Bitmap();
+            imgArr[index].texture = RES.getRes("over" + nameList[index] + "_png");
+            imgArr[index].scaleX = item.scale;
+            imgArr[index].scaleY = item.scale;
+            _this.addChild(imgArr[index]);
+            imgArr[index].y = item.y;
+            imgArr[index].x = item.x;
+            // 文字
+            fontArr[index] = new egret.TextField();
+            _this.addChild(fontArr[index]);
+            fontArr[index].text = nameList[index];
+            fontArr[index].x = item.fontX;
+            fontArr[index].y = item.fontY + 4;
+            fontArr[index].fontFamily = 'PingFang SC';
+            fontArr[index].size = [36, 36, 58][index];
+            fontArr[index].textColor = [0xAFD0E2, 0xD48D55, 0xFBDB19][index];
+            fontArr[index].strokeColor = [0x6791A5, 0xA4572A, 0xE7A200][index];
+            fontArr[index].stroke = 1;
+            fontArr[index].width = item.width;
+            fontArr[index].height = item.height;
+            fontArr[index].textAlign = egret.HorizontalAlign.CENTER;
+            fontArr[index].verticalAlign = egret.VerticalAlign.MIDDLE;
+        });
     };
     return GameOverScene;
-}(egret.DisplayObjectContainer));
-__reflect(GameOverScene.prototype, "GameOverScene");
+}(eui.Component));
+__reflect(GameOverScene.prototype, "GameOverScene", ["eui.UIComponent", "egret.DisplayObject"]);
 //# sourceMappingURL=GameOverScene.js.map

@@ -1,63 +1,23 @@
 class GameScene extends eui.Component implements eui.UIComponent {
-	/*背景*/
 	private bg1: eui.Image;
 	private bg2: eui.Image;
 	private bg3: eui.Image;
 	private bgTop1: eui.Image;
 	private bgTop2: eui.Image;
 	private bgSpeed: number = 1.4; //越大越快
-	// btn相关属性
-	private btn1: btnSort;
-	private btn2: btnSort;
-	private btn3: btnSort;
-	private btn4: btnSort;
-	private btn5: btnSort;
-	private btn6: btnSort;
-	private btn7: btnSort;
-	private btn8: btnSort;
-	private btn9: btnSort;
-	private btn10: btnSort;
-	public btnName: any = [
-		this.btn1, this.btn2, this.btn3,
-		this.btn4, this.btn5, this.btn6,
-		this.btn7, this.btn8, this.btn9, this.btn10];
-	// 玩家赛车
-	public BaseCarA: BaseCar;
-	public BaseCarB: BaseCar;
-	public BaseCarC: BaseCar;
-	public BaseCarD: BaseCar;
-	public BaseCarE: BaseCar;
-	public BaseCarF: BaseCar;
-	public BaseCarG: BaseCar;
-	public BaseCarH: BaseCar;
-	public BaseCarI: BaseCar;
-	public BaseCarJ: BaseCar;
-	public carName: any = [
-		this.BaseCarA, this.BaseCarB, this.BaseCarC,
-		this.BaseCarD, this.BaseCarE, this.BaseCarF,
-		this.BaseCarG, this.BaseCarH, this.BaseCarI, this.BaseCarJ];
-	// 实例化
 	private gameOther: gameOther;
 	public fire: egret.Bitmap
 	private tool: tool;
 	public gameOverScene: GameOverScene;
-	// 声明的数据
-	private outSide: any;
+	public btnName: any = []
+	public carName: any = []
 	private timeInterval: number = 1 / 60 * 1000
 	private timeOnEnterFrame: number = 0;//记录上一帧的时间
-	public lockTouchMove: boolean;
-	public lockTime: number = 100;
-	public timeoutId: number;
-	public indexCar: number;
-	public arraySelect: number[][];
 	public count: number = -1;
-	public setIntervalcount: number = 0;
-	private scores: egret.TextField
-	public btn: number[][];
 	public array: number[][];
 	public arrayBtn: number[][];
+	public arraySelect: number[][];
 	public countTemp: number = 0;
-	// 项目公用方法
 	public constructor() {
 		super();
 	}
@@ -73,7 +33,7 @@ class GameScene extends eui.Component implements eui.UIComponent {
 	//实例化场景和动画加载
 	private init() {
 		this.gameOther = new gameOther()
-		this.gameOther.onFont('20200221173', '11:45',0);
+		this.gameOther.onFont('20200221173', '11:45', 'playIng');
 		this.addChild(this.gameOther)
 		this.tool = new tool()
 		var outSide = this.tool.gitData();
@@ -109,6 +69,7 @@ class GameScene extends eui.Component implements eui.UIComponent {
 				this.carRun();
 			}
 		} else {
+			Global.replaceScene(new GameOverScene());
 			this.removeEventListener(egret.Event.ENTER_FRAME, this.onEnterFrame, this);
 		}
 	}

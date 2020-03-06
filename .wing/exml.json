@@ -3,5 +3,20 @@
         "path": "scene\\GameStartScene.ts",
         "class": "GameStartScene",
         "parentPath": ""
+    },
+    "170ad8431b0": {
+        "path": "components\\bomFont.ts",
+        "class": "bomFont",
+        "parentPath": ""
+    },
+    "170ae04887b": {
+        "path": "scene\\GameOverScene.ts",
+        "class": "GameOverScene",
+        "parentPath": ""
+    },
+    "170aeefd949": {
+        "path": "LoadingUI.ts",
+        "class": "LoadingUI",
+        "parentPath": ""
     }
 }

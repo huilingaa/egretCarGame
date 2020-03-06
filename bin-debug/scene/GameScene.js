@@ -10,25 +10,14 @@ r.prototype = e.prototype, t.prototype = new r();
 };
 var GameScene = (function (_super) {
     __extends(GameScene, _super);
-    // 项目公用方法
     function GameScene() {
         var _this = _super.call(this) || this;
         _this.bgSpeed = 1.4; //越大越快
-        _this.btnName = [
-            _this.btn1, _this.btn2, _this.btn3,
-            _this.btn4, _this.btn5, _this.btn6,
-            _this.btn7, _this.btn8, _this.btn9, _this.btn10
-        ];
-        _this.carName = [
-            _this.BaseCarA, _this.BaseCarB, _this.BaseCarC,
-            _this.BaseCarD, _this.BaseCarE, _this.BaseCarF,
-            _this.BaseCarG, _this.BaseCarH, _this.BaseCarI, _this.BaseCarJ
-        ];
+        _this.btnName = [];
+        _this.carName = [];
         _this.timeInterval = 1 / 60 * 1000;
         _this.timeOnEnterFrame = 0; //记录上一帧的时间
-        _this.lockTime = 100;
         _this.count = -1;
-        _this.setIntervalcount = 0;
         _this.countTemp = 0;
         return _this;
     }
@@ -44,7 +33,7 @@ var GameScene = (function (_super) {
     //实例化场景和动画加载
     GameScene.prototype.init = function () {
         this.gameOther = new gameOther();
-        this.gameOther.onFont('20200221173', '11:45', 0);
+        this.gameOther.onFont('20200221173', '11:45', 'playIng');
         this.addChild(this.gameOther);
         this.tool = new tool();
         var outSide = this.tool.gitData();
@@ -81,6 +70,7 @@ var GameScene = (function (_super) {
             }
         }
         else {
+            Global.replaceScene(new GameOverScene());
             this.removeEventListener(egret.Event.ENTER_FRAME, this.onEnterFrame, this);
         }
     };

@@ -17,16 +17,20 @@
 		"boxSort": "resource/eui_skins/boxSort.exml",
 		"tool": "resource/eui_skins/tool.exml",
 		"imgCar": "resource/eui_skins/imgCar.exml",
-		"GameStartScene": "resource/eui_skins/GameStartScene.exml"
+		"GameStartScene": "resource/eui_skins/GameStartScene.exml",
+		"bomFont": "resource/eui_skins/bomFont.exml",
+		"LoadingUI": "resource/eui_skins/LoadingUI.exml"
 	},
 	"autoGenerateExmlsList": true,
 	"exmls": [
+		"resource/eui_skins/bomFont.exml",
 		"resource/eui_skins/boxSort.exml",
 		"resource/eui_skins/ButtonSkin.exml",
 		"resource/eui_skins/GameOverScene.exml",
 		"resource/eui_skins/GameScene.exml",
 		"resource/eui_skins/GameStartScene.exml",
 		"resource/eui_skins/imgCar.exml",
+		"resource/eui_skins/LoadingUI.exml",
 		"resource/eui_skins/tool.exml"
 	],
 	"path": "resource/default.thm.json"

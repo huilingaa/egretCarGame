@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="LoadingUISkin" width="1080" height="" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" >
+	<w:Config id="170aeefd949" ></w:Config>
+		<e:Image id="bgTop1" source="loadBg_png" x="0" y="0" />
+
+</e:Skin>

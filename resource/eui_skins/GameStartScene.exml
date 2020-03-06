@@ -3,6 +3,5 @@
         xmlns:w="http://ns.egret.com/wing">
 	<w:Config id="16946c4d0a4"></w:Config>
 	<e:Image id="bg" source="startBg_png" x="0" y="0" />
-	<!--<e:Image id="left" source="left_png" y="20" x=".5" />
-	<e:Image id="right" source="right_png" y="20" x="960" />-->
+	
 </e:Skin>

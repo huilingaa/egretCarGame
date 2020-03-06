@@ -1,199 +1,9 @@
 {
 	"resources": [
 		{
-			"name": "1_png",
-			"type": "image",
-			"url": "assets/btn/1.png"
-		},
-		{
-			"name": "10_png",
-			"type": "image",
-			"url": "assets/btn/10.png"
-		},
-		{
-			"name": "2_png",
-			"type": "image",
-			"url": "assets/btn/2.png"
-		},
-		{
-			"name": "3_png",
-			"type": "image",
-			"url": "assets/btn/3.png"
-		},
-		{
-			"name": "4_png",
-			"type": "image",
-			"url": "assets/btn/4.png"
-		},
-		{
-			"name": "5_png",
-			"type": "image",
-			"url": "assets/btn/5.png"
-		},
-		{
-			"name": "6_png",
-			"type": "image",
-			"url": "assets/btn/6.png"
-		},
-		{
-			"name": "7_png",
-			"type": "image",
-			"url": "assets/btn/7.png"
-		},
-		{
-			"name": "8_png",
-			"type": "image",
-			"url": "assets/btn/8.png"
-		},
-		{
-			"name": "9_png",
-			"type": "image",
-			"url": "assets/btn/9.png"
-		},
-		{
-			"name": "lun_png",
-			"type": "image",
-			"url": "assets/car/lun.png"
-		},
-		{
-			"name": "font_fnt",
-			"type": "font",
-			"url": "assets/fonts/font.fnt"
-		},
-		{
-			"name": "font_png",
-			"type": "image",
-			"url": "assets/fonts/font.png"
-		},
-		{
-			"name": "bullet_mp3",
-			"type": "sound",
-			"url": "assets/sound/bullet.mp3"
-		},
-		{
-			"name": "StarWar_mp3",
-			"type": "sound",
-			"url": "assets/sound/StarWar.mp3"
-		},
-		{
 			"name": "description_json",
 			"type": "json",
 			"url": "config/description.json"
-		},
-		{
-			"name": "fire_png",
-			"type": "image",
-			"url": "assets/car/fire.png"
-		},
-		{
-			"name": "car9_png",
-			"type": "image",
-			"url": "assets/car/car9.png"
-		},
-		{
-			"name": "car1_png",
-			"type": "image",
-			"url": "assets/car/car1.png"
-		},
-		{
-			"name": "car2_png",
-			"type": "image",
-			"url": "assets/car/car2.png"
-		},
-		{
-			"name": "car3_png",
-			"type": "image",
-			"url": "assets/car/car3.png"
-		},
-		{
-			"name": "car4_png",
-			"type": "image",
-			"url": "assets/car/car4.png"
-		},
-		{
-			"name": "car5_png",
-			"type": "image",
-			"url": "assets/car/car5.png"
-		},
-		{
-			"name": "car6_png",
-			"type": "image",
-			"url": "assets/car/car6.png"
-		},
-		{
-			"name": "car7_png",
-			"type": "image",
-			"url": "assets/car/car7.png"
-		},
-		{
-			"name": "car8_png",
-			"type": "image",
-			"url": "assets/car/car8.png"
-		},
-		{
-			"name": "car10_png",
-			"type": "image",
-			"url": "assets/car/car10.png"
-		},
-		{
-			"name": "calendar_png",
-			"type": "image",
-			"url": "assets/other/calendar.png"
-		},
-		{
-			"name": "endRoad_png",
-			"type": "image",
-			"url": "assets/other/endRoad.png"
-		},
-		{
-			"name": "left_png",
-			"type": "image",
-			"url": "assets/other/left.png"
-		},
-		{
-			"name": "leftSquare_png",
-			"type": "image",
-			"url": "assets/other/leftSquare.png"
-		},
-		{
-			"name": "logo_png",
-			"type": "image",
-			"url": "assets/other/logo.png"
-		},
-		{
-			"name": "right_png",
-			"type": "image",
-			"url": "assets/other/right.png"
-		},
-		{
-			"name": "rightClose_png",
-			"type": "image",
-			"url": "assets/other/rightClose.png"
-		},
-		{
-			"name": "rightSquare_png",
-			"type": "image",
-			"url": "assets/other/rightSquare.png"
-		},
-		{
-			"name": "road_png",
-			"type": "image",
-			"url": "assets/other/road.png"
-		},
-		{
-			"name": "shengyin_png",
-			"type": "image",
-			"url": "assets/other/shengyin.png"
-		},
-		{
-			"name": "space_png",
-			"type": "image",
-			"url": "assets/other/space.png"
-		},
-		{
-			"name": "top_png",
-			"type": "image",
-			"url": "assets/other/top.png"
 		},
 		{
 			"name": "sCar2_png",
@@ -274,12 +84,262 @@
 			"name": "lamp0_png",
 			"type": "image",
 			"url": "assets/start/lamp0.png"
+		},
+		{
+			"name": "three_png",
+			"type": "image",
+			"url": "assets/over/three.png"
+		},
+		{
+			"name": "two_png",
+			"type": "image",
+			"url": "assets/over/two.png"
+		},
+		{
+			"name": "one_png",
+			"type": "image",
+			"url": "assets/over/one.png"
+		},
+		{
+			"name": "over9_png",
+			"type": "image",
+			"url": "assets/over/over9.png"
+		},
+		{
+			"name": "over5_png",
+			"type": "image",
+			"url": "assets/over/over5.png"
+		},
+		{
+			"name": "over6_png",
+			"type": "image",
+			"url": "assets/over/over6.png"
+		},
+		{
+			"name": "over3_png",
+			"type": "image",
+			"url": "assets/over/over3.png"
+		},
+		{
+			"name": "over2_png",
+			"type": "image",
+			"url": "assets/over/over2.png"
+		},
+		{
+			"name": "over4_png",
+			"type": "image",
+			"url": "assets/over/over4.png"
+		},
+		{
+			"name": "over1_png",
+			"type": "image",
+			"url": "assets/over/over1.png"
+		},
+		{
+			"name": "over8_png",
+			"type": "image",
+			"url": "assets/over/over8.png"
+		},
+		{
+			"name": "over7_png",
+			"type": "image",
+			"url": "assets/over/over7.png"
+		},
+		{
+			"name": "over10_png",
+			"type": "image",
+			"url": "assets/over/over10.png"
+		},
+		{
+			"name": "car1_png",
+			"type": "image",
+			"url": "assets/playing/car1.png"
+		},
+		{
+			"name": "car10_png",
+			"type": "image",
+			"url": "assets/playing/car10.png"
+		},
+		{
+			"name": "car2_png",
+			"type": "image",
+			"url": "assets/playing/car2.png"
+		},
+		{
+			"name": "car3_png",
+			"type": "image",
+			"url": "assets/playing/car3.png"
+		},
+		{
+			"name": "car4_png",
+			"type": "image",
+			"url": "assets/playing/car4.png"
+		},
+		{
+			"name": "car5_png",
+			"type": "image",
+			"url": "assets/playing/car5.png"
+		},
+		{
+			"name": "car6_png",
+			"type": "image",
+			"url": "assets/playing/car6.png"
+		},
+		{
+			"name": "car7_png",
+			"type": "image",
+			"url": "assets/playing/car7.png"
+		},
+		{
+			"name": "car8_png",
+			"type": "image",
+			"url": "assets/playing/car8.png"
+		},
+		{
+			"name": "car9_png",
+			"type": "image",
+			"url": "assets/playing/car9.png"
+		},
+		{
+			"name": "fire_png",
+			"type": "image",
+			"url": "assets/playing/fire.png"
+		},
+		{
+			"name": "lun_png",
+			"type": "image",
+			"url": "assets/playing/lun.png"
+		},
+		{
+			"name": "calendar_png",
+			"type": "image",
+			"url": "assets/com/calendar.png"
+		},
+		{
+			"name": "endRoad_png",
+			"type": "image",
+			"url": "assets/com/endRoad.png"
+		},
+		{
+			"name": "left_png",
+			"type": "image",
+			"url": "assets/com/left.png"
+		},
+		{
+			"name": "leftSquare_png",
+			"type": "image",
+			"url": "assets/com/leftSquare.png"
+		},
+		{
+			"name": "logo_png",
+			"type": "image",
+			"url": "assets/com/logo.png"
+		},
+		{
+			"name": "right_png",
+			"type": "image",
+			"url": "assets/com/right.png"
+		},
+		{
+			"name": "rightSquare_png",
+			"type": "image",
+			"url": "assets/com/rightSquare.png"
+		},
+		{
+			"name": "road_png",
+			"type": "image",
+			"url": "assets/com/road.png"
+		},
+		{
+			"name": "shengyin_png",
+			"type": "image",
+			"url": "assets/com/shengyin.png"
+		},
+		{
+			"name": "top_png",
+			"type": "image",
+			"url": "assets/com/top.png"
+		},
+		{
+			"name": "1_png",
+			"type": "image",
+			"url": "assets/com/btn/1.png"
+		},
+		{
+			"name": "10_png",
+			"type": "image",
+			"url": "assets/com/btn/10.png"
+		},
+		{
+			"name": "2_png",
+			"type": "image",
+			"url": "assets/com/btn/2.png"
+		},
+		{
+			"name": "3_png",
+			"type": "image",
+			"url": "assets/com/btn/3.png"
+		},
+		{
+			"name": "4_png",
+			"type": "image",
+			"url": "assets/com/btn/4.png"
+		},
+		{
+			"name": "5_png",
+			"type": "image",
+			"url": "assets/com/btn/5.png"
+		},
+		{
+			"name": "6_png",
+			"type": "image",
+			"url": "assets/com/btn/6.png"
+		},
+		{
+			"name": "7_png",
+			"type": "image",
+			"url": "assets/com/btn/7.png"
+		},
+		{
+			"name": "8_png",
+			"type": "image",
+			"url": "assets/com/btn/8.png"
+		},
+		{
+			"name": "9_png",
+			"type": "image",
+			"url": "assets/com/btn/9.png"
+		},
+		{
+			"name": "bullet_mp3",
+			"type": "sound",
+			"url": "assets/com/sound/bullet.mp3"
+		},
+		{
+			"name": "StarWar_mp3",
+			"type": "sound",
+			"url": "assets/com/sound/StarWar.mp3"
+		},
+		{
+			"name": "overBg_png",
+			"type": "image",
+			"url": "assets/over/overBg.png"
+		},
+		{
+			"name": "loading_png",
+			"type": "image",
+			"url": "assets/com/loading.png"
+		},
+		{
+			"name": "loadBg_png",
+			"type": "image",
+			"url": "assets/com/loadBg.png"
 		}
 	],
 	"groups": [
 		{
 			"name": "preload",
-			"keys": "1_png,10_png,2_png,3_png,4_png,5_png,6_png,7_png,8_png,9_png,lun_png,font_fnt,font_png,bullet_mp3,StarWar_mp3,description_json,fire_png,car9_png,car1_png,car2_png,car3_png,car4_png,car5_png,car6_png,car7_png,car8_png,car10_png,calendar_png,endRoad_png,left_png,leftSquare_png,logo_png,right_png,rightClose_png,rightSquare_png,road_png,shengyin_png,space_png,top_png,sCar2_png,sCar3_png,sCar4_png,sCar5_png,sCar6_png,sCar8_png,sCar9_png,sCar10_png,startBg_png,sCar1_png,sCar7_png,lamp1_png,lamp2_png,lamp3_png,lamp4_png,lamp0_png"
+			"keys": "description_json,sCar2_png,sCar3_png,sCar4_png,sCar5_png,sCar6_png,sCar8_png,sCar9_png,sCar10_png,startBg_png,sCar1_png,sCar7_png,lamp1_png,lamp2_png,lamp3_png,lamp4_png,lamp0_png,three_png,two_png,one_png,over9_png,over5_png,over6_png,over3_png,over2_png,over4_png,over1_png,over8_png,over7_png,over10_png,car1_png,car10_png,car2_png,car3_png,car4_png,car5_png,car6_png,car7_png,car8_png,car9_png,fire_png,lun_png,calendar_png,endRoad_png,left_png,leftSquare_png,logo_png,right_png,rightSquare_png,road_png,shengyin_png,top_png,1_png,10_png,2_png,3_png,4_png,5_png,6_png,7_png,8_png,9_png,bullet_mp3,StarWar_mp3,overBg_png,loading_png,loadBg_png"
 		}
 	]
 }

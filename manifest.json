@@ -19,7 +19,7 @@
 		"bin-debug/ThemeAdapter.js",
 		"bin-debug/components/BaseCar.js",
 		"bin-debug/AssetAdapter.js",
-		"bin-debug/components/gameOther.js",
+		"bin-debug/components/comFrame.js",
 		"bin-debug/components/startCar.js",
 		"bin-debug/scene/GameOverScene.js",
 		"bin-debug/scene/GameScene.js",

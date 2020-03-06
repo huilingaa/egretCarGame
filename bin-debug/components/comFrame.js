@@ -71,58 +71,89 @@ var gameOther = (function (_super) {
         });
     };
     // 文字
-    gameOther.prototype.onFont = function (font1, font2, start) {
-        var label1 = new egret.TextField();
-        var label2 = new egret.TextField();
-        var arr = [{
-                x1: 147, x2: 652, y: 20, width: 281, height: 52
+    gameOther.prototype.onFont = function (font1, font2, state) {
+        var _this = this;
+        var arrBom = [{
+                x: 174, x2: 652, y: 66, font: '期号 20200221172'
             }, {
-                x1: 148, x2: 718, y: 50, width: 222, height: 52
-            }];
-        var fontArray = [label1, label2];
-        for (var i in [0, 1]) {
-            this.addChild(fontArray[i]);
-            fontArray[0].x = arr[start].x1;
-            fontArray[1].x = arr[start].x2;
-            fontArray[i].y = arr[start].y;
-            fontArray[i].width = arr[start].width;
-            fontArray[i].height = arr[start].height;
-            fontArray[i].size = 20;
-            fontArray[i].textAlign = egret.HorizontalAlign.CENTER;
-            fontArray[i].verticalAlign = egret.VerticalAlign.MIDDLE;
-            fontArray[i].textColor = 0xffffff;
-            fontArray[0].text = "下期时间:" + font1;
-            fontArray[1].text = "期号:" + font2;
-        }
+                x: 738, x2: 718, y: 66, font: '下期时间 13：49'
+            }, {
+                x: 55, y: 937, font: '期号'
+            }, {
+                x: 180, y: 937, font: '20200221159'
+            }, {
+                x: 60, y: 984, font: '2020-02-21'
+            }, {
+                x: 220, y: 984, font: '16:09'
+            },
+            {
+                x: 493, y: 937, font: '冠亚军和'
+            },
+            {
+                x: 411, y: 984, font: '12'
+            },
+            {
+                x: 521, y: 984, font: '大'
+            }, {
+                x: 648, y: 984, font: '双'
+            },
+            {
+                x: 834, y: 937, font: '1-5龙虎'
+            },
+            {
+                x: 706 + 60, y: 984, font: '龙'
+            },
+            {
+                x: 706 + 60 * 2, y: 984, font: '龙'
+            }, {
+                x: 706 + 60 * 3, y: 984, font: '虎'
+            }, {
+                x: 706 + 60 * 4, y: 984, font: '龙'
+            }, {
+                x: 706 + 60 * 5, y: 984, font: '虎'
+            },
+        ];
+        var arrayX = [200, 712];
+        var font = [];
+        arrBom.forEach(function (item, index) {
+            font[index] = new egret.TextField();
+            _this.addChild(font[index]);
+            if (state !== 'playIng' || index < 2) {
+                font[index].x = state == 'playIng' ? arrayX[index] : item.x;
+                font[index].y = state == 'playIng' ? 36 : item.y;
+                font[index].text = item.font;
+            }
+            font[index].size = 22;
+            font[index].textColor = 0xffffff;
+        });
     };
-    // 音乐样式与音乐
+    // 音乐样式与播放
     gameOther.prototype.toggleMusic = function () {
         var leftTime = new egret.Bitmap();
         leftTime.texture = RES.getRes("calendar_png");
         this.addChild(leftTime);
         leftTime.y = 53;
         leftTime.x = 20;
-        this.rightSound = new egret.Bitmap();
-        this.addChild(this.rightSound);
-        this.onSound(RES.getRes("shengyin_png"));
-    };
-    gameOther.prototype.onSound = function (instance) {
-        this.rightSound.texture = instance;
-        this.rightSound.y = 53;
-        this.rightSound.x = 1050 - this.rightSound.width;
-        this.rightSound.touchEnabled = true;
-        this.rightSound.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onTouch, this);
-    };
-    gameOther.prototype.onTouch = function () {
-        if (!this.switchOpen) {
-            this.onSound(RES.getRes("shengyin_png"));
-        }
-        else {
-            this.onSound(RES.getRes("shengyinClose_png"));
-        }
-        this.switchOpen = !this.switchOpen;
+        var rightSound = new egret.Bitmap();
+        this.addChild(rightSound);
+        rightSound.texture = RES.getRes('shengyin_png');
+        rightSound.y = 53;
+        rightSound.x = 1050 - rightSound.width;
+        rightSound.touchEnabled = true;
+        rightSound.addEventListener(egret.TouchEvent.TOUCH_TAP, function () {
+            var switchOpen = !switchOpen;
+            // this.texture = RES.getRes('loading_png');
+            if (switchOpen) {
+                console.log('as');
+                rightSound.texture = RES.getRes('shengyin_png');
+            }
+            else {
+                console.log('no');
+                rightSound.texture = RES.getRes('loading_png');
+            }
+        }, rightSound);
     };
     return gameOther;
 }(egret.DisplayObjectContainer));
 __reflect(gameOther.prototype, "gameOther");
-//# sourceMappingURL=gameOther.js.map
+//# sourceMappingURL=comFrame.js.map

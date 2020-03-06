@@ -1,7 +1,4 @@
 class Main extends egret.DisplayObjectContainer {
-
-
-
     public constructor() {
         super();
         this.addEventListener(egret.Event.ADDED_TO_STAGE, this.onAddToStage, this);
@@ -23,7 +20,6 @@ class Main extends egret.DisplayObjectContainer {
         egret.lifecycle.onResume = () => {
             egret.ticker.resume();
         }
-        //inject the custom material parser
         //注入自定义的素材解析器
         let assetAdapter = new AssetAdapter();
         egret.registerImplementation("eui.IAssetAdapter", assetAdapter);
@@ -38,6 +34,8 @@ class Main extends egret.DisplayObjectContainer {
         await this.loadResource()
         this.createGameScene();
     }
+
+
 
     private async loadResource() {
         try {
@@ -77,6 +75,8 @@ class Main extends egret.DisplayObjectContainer {
      * Create a game scene
      */
     private createGameScene() {
+        // Global.addScene(new GameScene())
+        // Global.addScene(new GameOverScene())
         Global.addScene(new GameStartScene())
     }
 }

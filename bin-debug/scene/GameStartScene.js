@@ -10,43 +10,22 @@ r.prototype = e.prototype, t.prototype = new r();
 };
 var GameStartScene = (function (_super) {
     __extends(GameStartScene, _super);
-    // 项目公用方法
     function GameStartScene() {
         var _this = _super.call(this) || this;
-        _this.btnName = [
-            _this.btn1, _this.btn2, _this.btn3,
-            _this.btn4, _this.btn5, _this.btn6,
-            _this.btn7, _this.btn8, _this.btn9, _this.btn10
-        ];
-        _this.startCar = [
-            _this.startCarA, _this.startCarB, _this.startCarC,
-            _this.startCarD, _this.startCarE, _this.startCarF,
-            _this.startCarG, _this.startCarH, _this.startCarI, _this.startCarJ
-        ];
-        _this.toggleMusic();
+        _this.btnName = [];
+        _this.startCar = [];
         return _this;
-        // //创建一个计时器对象
-        // var timer: egret.Timer = new egret.Timer(1000, 3);
-        // //注册事件侦听器
-        // timer.addEventListener(egret.TimerEvent.TIMER, this.timerFunc, this);
-        // timer.addEventListener(egret.TimerEvent.TIMER_COMPLETE, this.timerComFunc, this);
-        // //开始计时
-        // timer.start();
     }
     GameStartScene.prototype.childrenCreated = function () {
         _super.prototype.childrenCreated.call(this);
         this.init();
-        this.setListeners();
-    };
-    GameStartScene.prototype.setListeners = function () {
-        // this.addEventListener(egret.Event.ENTER_FRAME, this.onEnterFrame, this)
-        // this.timeOnEnterFrame = egret.getTimer();
     };
     //实例化场景和动画加载
     GameStartScene.prototype.init = function () {
         this.gameOther = new gameOther();
-        this.gameOther.onFont('20200221173', '11:45', 1);
+        this.gameOther.onFont('20200221173', '11:45', 'playStart');
         this.addChild(this.gameOther);
+        this.toggleMusic();
         for (var i = 0; i < 10; i++) {
             this.btnName[i] = new btnSort((i + 1) + '_png');
             this.btnName[i].appear(102.9 * i + 79, 194);
@@ -58,12 +37,11 @@ var GameStartScene = (function (_super) {
         }
     };
     GameStartScene.prototype.toggleMusic = function () {
-        // 图片
         var leftTime = new egret.Bitmap();
         this.addChild(leftTime);
         leftTime.y = 222;
         leftTime.x = 297;
-        var that = this;
+        leftTime.texture = RES.getRes("lamp0_png");
         this.countDown = new egret.TextField();
         this.addChild(this.countDown);
         this.countDown.fontFamily = 'Arial Black';
@@ -72,7 +50,7 @@ var GameStartScene = (function (_super) {
         this.countDown.size = 124;
         var count = 3;
         var countLight = 0;
-        leftTime.texture = RES.getRes("lamp0_png");
+        var that = this;
         that.countDown.text = count.toString();
         var countDown = setInterval(function () {
             if (count > 0) {
@@ -82,6 +60,7 @@ var GameStartScene = (function (_super) {
                 that.countDown.text = count.toString();
             }
             else {
+                Global.replaceScene(new GameScene());
                 clearInterval(countDown);
             }
         }, 1000);
