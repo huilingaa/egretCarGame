@@ -1,7 +1,7 @@
 {
 	"groups": [
 		{
-			"keys": "description_json,sCar2_png,sCar3_png,sCar4_png,sCar5_png,sCar6_png,sCar8_png,sCar9_png,sCar10_png,startBg_png,sCar1_png,sCar7_png,lamp1_png,lamp2_png,lamp3_png,lamp4_png,lamp0_png,three_png,two_png,one_png,over9_png,over5_png,over6_png,over3_png,over2_png,over4_png,over1_png,over8_png,over7_png,over10_png,car1_png,car10_png,car2_png,car3_png,car4_png,car5_png,car6_png,car7_png,car8_png,car9_png,fire_png,lun_png,calendar_png,endRoad_png,left_png,leftSquare_png,logo_png,right_png,rightSquare_png,road_png,shengyin_png,top_png,1_png,10_png,2_png,3_png,4_png,5_png,6_png,7_png,8_png,9_png,bullet_mp3,StarWar_mp3,overBg_png,loading_png,loadBg_png",
+			"keys": "description_json,sCar2_png,sCar3_png,sCar4_png,sCar5_png,sCar6_png,sCar8_png,sCar9_png,sCar10_png,startBg_png,sCar1_png,sCar7_png,lamp1_png,lamp2_png,lamp3_png,lamp4_png,lamp0_png,three_png,two_png,one_png,over9_png,over5_png,over6_png,over3_png,over2_png,over4_png,over1_png,over8_png,over7_png,over10_png,car1_png,car10_png,car2_png,car3_png,car4_png,car5_png,car6_png,car7_png,car8_png,car9_png,fire_png,lun_png,calendar_png,endRoad_png,left_png,leftSquare_png,logo_png,right_png,rightSquare_png,road_png,shengyin_png,top_png,1_png,10_png,2_png,3_png,4_png,5_png,6_png,7_png,8_png,9_png,bullet_mp3,StarWar_mp3,overBg_png,loading_png,loadBg_png,musicClose_png",
 			"name": "preload"
 		},
 		{
@@ -344,6 +344,11 @@
 			"url": "assets/com/loadBg.png",
 			"type": "image",
 			"name": "loadBg_png"
+		},
+		{
+			"name": "musicClose_png",
+			"type": "image",
+			"url": "assets/com/musicClose.png"
 		}
 	]
 }

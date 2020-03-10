@@ -1,10 +1,9 @@
 class gameOther extends egret.DisplayObjectContainer {
     public switchOpen: boolean = true;
     public control: boolean = true;
-    public rightSound: egret.Bitmap;
+    public rightSound: eui.Image;
     public constructor() {
         super();
-        this.toggleMusic();
         this.addEventListener(egret.Event.ADDED_TO_STAGE, this.onAddToStage, this);
     }
     private async onAddToStage(event: egret.Event) {
@@ -71,33 +70,14 @@ class gameOther extends egret.DisplayObjectContainer {
     }
     // 音乐样式与播放
     public toggleMusic() {
-        var leftTime: egret.Bitmap = new egret.Bitmap();
-        leftTime.texture = RES.getRes("calendar_png");
-        this.addChild(leftTime);
-        leftTime.y = 53
-        leftTime.x = 20
-        var rightSound = new egret.Bitmap();
-        this.addChild(rightSound);
-        rightSound.texture = RES.getRes('shengyin_png');
-
-
-        rightSound.y = 53
-        rightSound.x = 1050 - rightSound.width
-        rightSound.touchEnabled = true;
-        rightSound.addEventListener(egret.TouchEvent.TOUCH_TAP, function () {
-            var switchOpen = !switchOpen
-            // this.texture = RES.getRes('loading_png');
-            if (switchOpen) {
-                console.log('as');
-                rightSound.texture = RES.getRes('shengyin_png');
-            } else {
-                console.log('no');
-                rightSound.texture = RES.getRes('loading_png');
-            }
-        }, rightSound);
-
+        var that = this
+        Global.painting(this, new egret.Bitmap(RES.getRes("calendar_png")), { x: 20, y: 53 });
+        this.rightSound = new eui.Image(RES.getRes('shengyin_png'));
+        Global.painting(this, this.rightSound, { x: 1014, y: 53 });
+        this.rightSound.touchEnabled = true;
+        this.rightSound.addEventListener(egret.TouchEvent.TOUCH_TAP, (e) => {
+            this.switchOpen = !this.switchOpen;
+            this.rightSound.source = this.switchOpen ? RES.getRes('shengyin_png') : RES.getRes('musicClose_png');
+        }, this);
     }
-
-
-
 }

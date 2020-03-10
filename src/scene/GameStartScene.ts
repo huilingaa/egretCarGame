@@ -45,10 +45,8 @@ class GameStartScene extends eui.Component implements eui.UIComponent {
 		var leftTime: egret.Bitmap = new egret.Bitmap();
 		leftTime.texture = RES.getRes("lamp0_png");
 		Global.painting(this, leftTime, { x: 297, y: 222 });
-
 		this.countDown = new egret.TextField();
 		Global.written(this, this.countDown, { x: 497, y: 523, textColor: 0xfffffff, text: '', size: 124, fontFamily: 'Arial Black' });
-
 		var count = 4;
 		var countLight = 0;
 		var that = this;

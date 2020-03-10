@@ -21,7 +21,7 @@ class GameOverScene extends eui.Component implements eui.UIComponent {
 			btnAry[i].setScale(1.2);
 			this.addChild(btnAry[i])
 		}
-		var nameList = [optionss.indexOf(2), optionss.indexOf(1), optionss.indexOf(3)]
+		var nameList = [optionss.indexOf(2) + 1, optionss.indexOf(3) + 1, optionss.indexOf(1) + 1]
 		this.initImg(nameList);
 	}
 	public initImg(nameList: any) {
@@ -66,15 +66,10 @@ class GameOverScene extends eui.Component implements eui.UIComponent {
 			fontArr[index].height = item.height;
 			fontArr[index].textAlign = egret.HorizontalAlign.CENTER;
 			fontArr[index].verticalAlign = egret.VerticalAlign.MIDDLE;
-
 			egret.Tween.get(fontArr[index], { loop: true }).
 				to({ x: item.fontX, y: item.fontY + 14 }, 800, egret.Ease.sineIn).
 				to({ x: item.fontX, y: item.fontY + 4 }, 800, egret.Ease.sineIn);
 		})
 
 	}
-
-
-
-
 }

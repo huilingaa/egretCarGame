@@ -12,6 +12,7 @@ class Global {
 		this.stage.addChild(scene)
 	}
 	public static painting(that: any, painting: any, item: any) {
+		console.log(item);
 		that.addChild(painting);
 		painting.x = item.x;
 		painting.y = item.y;

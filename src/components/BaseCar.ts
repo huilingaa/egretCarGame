@@ -33,7 +33,6 @@ class BaseCar extends egret.DisplayObjectContainer {
 		var that = this;
 		this.fire = new egret.Bitmap(RES.getRes("fire_png"));
 		Global.painting(this, this.fire, { x: 202, y: 30 });
-
 		setTimeout(function () {
 			if (that.fire) {
 				that.removeChild(that.fire);

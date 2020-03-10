@@ -31,7 +31,7 @@ var GameOverScene = (function (_super) {
             btnAry[i].setScale(1.2);
             this.addChild(btnAry[i]);
         }
-        var nameList = [optionss.indexOf(2), optionss.indexOf(1), optionss.indexOf(3)];
+        var nameList = [optionss.indexOf(2) + 1, optionss.indexOf(3) + 1, optionss.indexOf(1) + 1];
         this.initImg(nameList);
     };
     GameOverScene.prototype.initImg = function (nameList) {

@@ -7,10 +7,6 @@ var __reflect = (this && this.__reflect) || function (p, c, t) {
 var Global = (function () {
     function Global() {
     }
-    // private async onAddToStage(event: egret.Event) {
-    // 	await RES.loadConfig("resource/default.res.json", "resource/");
-    // 	await RES.loadGroup("preload");
-    // }
     Global.addScene = function (scene) {
         this.stage.addChild(scene);
     };
@@ -19,6 +15,7 @@ var Global = (function () {
         this.stage.addChild(scene);
     };
     Global.painting = function (that, painting, item) {
+        console.log(item);
         that.addChild(painting);
         painting.x = item.x;
         painting.y = item.y;
