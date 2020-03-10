@@ -18,5 +18,10 @@
         "path": "LoadingUI.ts",
         "class": "LoadingUI",
         "parentPath": ""
+    },
+    "170c262cf95": {
+        "path": "tool\\imgFont.ts",
+        "class": "imgFont",
+        "parentPath": ""
     }
 }

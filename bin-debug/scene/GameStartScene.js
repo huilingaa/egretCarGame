@@ -53,16 +53,10 @@ var GameStartScene = (function (_super) {
     };
     GameStartScene.prototype.toggleMusic = function () {
         var leftTime = new egret.Bitmap();
-        this.addChild(leftTime);
-        leftTime.y = 222;
-        leftTime.x = 297;
         leftTime.texture = RES.getRes("lamp0_png");
+        Global.painting(this, leftTime, { x: 297, y: 222 });
         this.countDown = new egret.TextField();
-        this.addChild(this.countDown);
-        this.countDown.fontFamily = 'Arial Black';
-        this.countDown.x = 497;
-        this.countDown.y = 523;
-        this.countDown.size = 124;
+        Global.written(this, this.countDown, { x: 497, y: 523, textColor: 0xfffffff, text: '', size: 124, fontFamily: 'Arial Black' });
         var count = 4;
         var countLight = 0;
         var that = this;

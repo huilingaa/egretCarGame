@@ -19,7 +19,8 @@
 		"imgCar": "resource/eui_skins/imgCar.exml",
 		"GameStartScene": "resource/eui_skins/GameStartScene.exml",
 		"bomFont": "resource/eui_skins/bomFont.exml",
-		"LoadingUI": "resource/eui_skins/LoadingUI.exml"
+		"LoadingUI": "resource/eui_skins/LoadingUI.exml",
+		"imgFont": "resource/eui_skins/imgFont.exml"
 	},
 	"autoGenerateExmlsList": true,
 	"exmls": [
@@ -30,6 +31,7 @@
 		"resource/eui_skins/GameScene.exml",
 		"resource/eui_skins/GameStartScene.exml",
 		"resource/eui_skins/imgCar.exml",
+		"resource/eui_skins/imgFont.exml",
 		"resource/eui_skins/LoadingUI.exml",
 		"resource/eui_skins/tool.exml"
 	],

@@ -12,6 +12,8 @@ class tool {
 		return a - b;
 	}
 
+	
+
 	public soo(temp) {
 		var a = []
 		for (var i = 0; i < 10; i++) {
@@ -91,9 +93,6 @@ class tool {
 
 		}
 
-
 		return { returna: this.newFire, returnb: this.arrayBtn, returnc: arr };
-
-
 	}
 }

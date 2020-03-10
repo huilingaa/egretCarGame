@@ -9,5 +9,7 @@ class btnSort extends BaseObject {
 		this.x = x
 		this.y = y
 	}
+
+	
 	
 }

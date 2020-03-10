@@ -88,11 +88,8 @@ var BaseCar = (function (_super) {
     //加速火苗
     BaseCar.prototype.speedUp = function (i) {
         var that = this;
-        this.fire = new egret.Bitmap();
-        this.fire.texture = RES.getRes("fire_png");
-        this.addChild(this.fire);
-        this.fire.y = 30;
-        this.fire.x = 202;
+        this.fire = new egret.Bitmap(RES.getRes("fire_png"));
+        Global.painting(this, this.fire, { x: 202, y: 30 });
         setTimeout(function () {
             if (that.fire) {
                 that.removeChild(that.fire);
@@ -101,12 +98,10 @@ var BaseCar = (function (_super) {
     };
     //初始化小车样式
     BaseCar.prototype.onGroupComplete = function (i) {
-        var img = new egret.Bitmap();
-        img.texture = RES.getRes('car' + (i + 1) + '_png');
+        var img = new egret.Bitmap(RES.getRes('car' + (i + 1) + '_png'));
         this.addChild(img);
         for (var j = 0; j < 2; j++) {
-            this.lunArray[j] = new egret.Bitmap();
-            this.lunArray[j].texture = RES.getRes("lun_png");
+            this.lunArray[j] = new egret.Bitmap(RES.getRes("lun_png"));
             this.addChild(this.lunArray[j]);
             this.lunArray[j].y = img.y + 32;
             this.lunArray[j].anchorOffsetX = this.lunArray[j].width / 2;

@@ -14,26 +14,12 @@ var LoadingUI = (function (_super) {
         var _this = _super.call(this) || this;
         _this.createView();
         return _this;
-        // this.onProgress();
     }
     LoadingUI.prototype.createView = function () {
-        var bg = new egret.Bitmap(RES.getRes("loadBg_png"));
-        this.addChild(bg);
-        bg.x = 0;
-        bg.y = 0;
+        Global.painting(this, new egret.Bitmap(RES.getRes("loadBg_png")), { x: 0, y: 0 });
+        Global.written(this, new egret.TextField(), { x: 576, y: 900, textColor: 0x00A5FF, text: '加载中', size: 20 });
         this.textField = new egret.TextField();
-        this.addChild(this.textField);
-        this.textField.y = 900;
-        this.textField.x = 576;
-        this.textField.textColor = 0x00A5FF;
-        this.textField.text = "\u52A0\u8F7D\u4E2D";
-        this.textField.size = 20;
-        this.textField = new egret.TextField();
-        this.addChild(this.textField);
-        this.textField.y = 922;
-        this.textField.x = 908;
-        this.textField.textColor = 0x00A5FF;
-        this.textField.size = 20;
+        Global.written(this, this.textField, { x: 908, y: 922, textColor: 0x00A5FF, text: '', size: 20 });
     };
     LoadingUI.prototype.onProgress = function (current, total) {
         var text = (current / total) * 100;
@@ -41,10 +27,7 @@ var LoadingUI = (function (_super) {
         this.textField.text = "" + t + '%';
         var temp = t / 100 * 16;
         for (var i = 0; i <= temp; i++) {
-            var box = new egret.Bitmap(RES.getRes("loading_png"));
-            this.addChild(box);
-            box.x = 332 + 32 * i;
-            box.y = 930;
+            Global.painting(this, new egret.Bitmap(RES.getRes("loading_png")), { x: 332 + 32 * i, y: 930 });
         }
     };
     return LoadingUI;

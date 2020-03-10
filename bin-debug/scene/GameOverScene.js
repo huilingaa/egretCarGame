@@ -48,8 +48,7 @@ var GameOverScene = (function (_super) {
         var badgeArr = [];
         num.forEach(function (item, index) {
             // 车
-            imgArr[index] = new egret.Bitmap();
-            imgArr[index].texture = RES.getRes("over" + nameList[index] + "_png");
+            imgArr[index] = new egret.Bitmap(RES.getRes("over" + nameList[index] + "_png"));
             imgArr[index].scaleX = item.scale;
             imgArr[index].scaleY = item.scale;
             _this.addChild(imgArr[index]);
@@ -59,8 +58,7 @@ var GameOverScene = (function (_super) {
                 to({ x: item.x, y: item.y + 10, }, 1000, egret.Ease.sineInOut).
                 to({ x: item.x, y: item.y }, 1000, egret.Ease.sineIn);
             // 奖徽
-            badgeArr[index] = new egret.Bitmap();
-            badgeArr[index].texture = RES.getRes(['one', 'two', 'three'][index] + "_png");
+            badgeArr[index] = new egret.Bitmap(RES.getRes(['one', 'two', 'three'][index] + "_png"));
             _this.addChild(badgeArr[index]);
             badgeArr[index].y = item.badgeY;
             badgeArr[index].x = item.badgeX;
@@ -70,15 +68,11 @@ var GameOverScene = (function (_super) {
         });
         num.forEach(function (item, index) {
             fontArr[index] = new egret.TextField();
-            _this.addChild(fontArr[index]);
-            fontArr[index].text = nameList[index];
-            fontArr[index].x = item.fontX;
-            fontArr[index].y = item.fontY + 4;
-            fontArr[index].fontFamily = 'PingFang SC';
-            fontArr[index].size = [36, 36, 58][index];
-            fontArr[index].textColor = [0xAFD0E2, 0xD48D55, 0xFBDB19][index];
-            fontArr[index].strokeColor = [0x6791A5, 0xA4572A, 0xE7A200][index];
-            fontArr[index].stroke = 1;
+            Global.written(_this, fontArr[index], {
+                x: item.fontX, y: item.fontY + 4,
+                textColor: [0xAFD0E2, 0xD48D55, 0xFBDB19][index], text: nameList[index], size: [36, 36, 58][index],
+                fontFamily: 'PingFang SC', strokeColor: [0x6791A5, 0xA4572A, 0xE7A200][index], stroke: 1
+            });
             fontArr[index].width = item.width;
             fontArr[index].height = item.height;
             fontArr[index].textAlign = egret.HorizontalAlign.CENTER;

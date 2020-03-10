@@ -39,7 +39,6 @@ var GameScene = (function (_super) {
         var outSide = this.tool.gitData();
         this.array = outSide.returna; //每次距离
         this.arrayBtn = outSide.returnb; //排序编号
-        console.log(this.array);
         egret.localStorage.setItem('arrayBtn', JSON.stringify(this.arrayBtn[9]));
         this.arraySelect = outSide.returnc; //火苗
         var distanceX = [144, 131, 119, 108, 96, 84, 78, 62, 50, 38];

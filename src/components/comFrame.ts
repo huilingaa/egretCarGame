@@ -85,7 +85,7 @@ class gameOther extends egret.DisplayObjectContainer {
         rightSound.x = 1050 - rightSound.width
         rightSound.touchEnabled = true;
         rightSound.addEventListener(egret.TouchEvent.TOUCH_TAP, function () {
-             var switchOpen = !switchOpen
+            var switchOpen = !switchOpen
             // this.texture = RES.getRes('loading_png');
             if (switchOpen) {
                 console.log('as');

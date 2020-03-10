@@ -7,12 +7,32 @@ var __reflect = (this && this.__reflect) || function (p, c, t) {
 var Global = (function () {
     function Global() {
     }
+    // private async onAddToStage(event: egret.Event) {
+    // 	await RES.loadConfig("resource/default.res.json", "resource/");
+    // 	await RES.loadGroup("preload");
+    // }
     Global.addScene = function (scene) {
         this.stage.addChild(scene);
     };
     Global.replaceScene = function (scene) {
         this.stage.removeChildren();
         this.stage.addChild(scene);
+    };
+    Global.painting = function (that, painting, item) {
+        that.addChild(painting);
+        painting.x = item.x;
+        painting.y = item.y;
+    };
+    Global.written = function (that, textField, item) {
+        textField.x = item.x;
+        textField.y = item.y;
+        textField.textColor = item.textColor;
+        textField.text = item.text;
+        textField.size = item.size;
+        textField.fontFamily = item.fontFamily;
+        textField.stroke = item.stroke ? item.stroke : '';
+        textField.strokeColor = item.strokeColor ? item.strokeColor : '';
+        that.addChild(textField);
     };
     return Global;
 }());

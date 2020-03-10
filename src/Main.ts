@@ -3,7 +3,6 @@ class Main extends egret.DisplayObjectContainer {
         super();
         this.addEventListener(egret.Event.ADDED_TO_STAGE, this.onAddToStage, this);
     }
-
     private onAddToStage(event: egret.Event) {
 
         // 赋值Global.stage，方便后面访问stage
@@ -70,6 +69,7 @@ class Main extends egret.DisplayObjectContainer {
 
     //创建游戏场景
     private createGameScene() {
+
         // Global.addScene(new GameScene())
         // Global.addScene(new GameOverScene())
         Global.addScene(new GameStartScene())
