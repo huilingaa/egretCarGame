@@ -90,25 +90,28 @@ var Main = (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        _a.trys.push([0, 4, , 5]);
-                        loadingView = new LoadingUI();
-                        this.stage.addChild(loadingView);
+                        _a.trys.push([0, 5, , 6]);
                         return [4 /*yield*/, RES.loadConfig("resource/default.res.json", "resource/")];
                     case 1:
-                        _a.sent();
-                        return [4 /*yield*/, this.loadTheme()];
+                        _a.sent(); //加载配置表
+                        return [4 /*yield*/, RES.loadGroup("loading")];
                     case 2:
-                        _a.sent();
-                        return [4 /*yield*/, RES.loadGroup("preload", 0, loadingView)];
+                        _a.sent(); //加载loading组
+                        return [4 /*yield*/, this.loadTheme()];
                     case 3:
                         _a.sent();
-                        this.stage.removeChild(loadingView);
-                        return [3 /*break*/, 5];
+                        loadingView = new LoadingUI();
+                        this.stage.addChild(loadingView);
+                        return [4 /*yield*/, RES.loadGroup("preload", 0, loadingView)];
                     case 4:
+                        _a.sent(); //加载默认preload组资源,并执行loadingView
+                        this.stage.removeChild(loadingView);
+                        return [3 /*break*/, 6];
+                    case 5:
                         e_1 = _a.sent();
                         console.error(e_1);
-                        return [3 /*break*/, 5];
-                    case 5: return [2 /*return*/];
+                        return [3 /*break*/, 6];
+                    case 6: return [2 /*return*/];
                 }
             });
         });
@@ -116,8 +119,6 @@ var Main = (function (_super) {
     Main.prototype.loadTheme = function () {
         var _this = this;
         return new Promise(function (resolve, reject) {
-            // load skin theme configuration file, you can manually modify the file. And replace the default skin.
-            //加载皮肤主题配置文件,可以手动修改这个文件。替换默认皮肤。
             var theme = new eui.Theme("resource/default.thm.json", _this.stage);
             theme.addEventListener(eui.UIEvent.COMPLETE, function () {
                 resolve();
@@ -130,10 +131,7 @@ var Main = (function (_super) {
         result.texture = texture;
         return result;
     };
-    /**
-     * 创建游戏场景
-     * Create a game scene
-     */
+    //创建游戏场景
     Main.prototype.createGameScene = function () {
         // Global.addScene(new GameScene())
         // Global.addScene(new GameOverScene())

@@ -50,6 +50,7 @@ var BaseCar = (function (_super) {
         _this.timberInterval = [
             _this.timberInterval1, _this.timberInterval1
         ];
+        _this.nowSpeed = 2000;
         _this.rotations = 10;
         _this.lunArray = [
             _this.lun1, _this.lun2
@@ -82,21 +83,7 @@ var BaseCar = (function (_super) {
     BaseCar.prototype.fly = function (x, y, speed) {
         egret.Tween.removeTweens(this);
         var tw = egret.Tween.get(this, {});
-        tw.to({ x: x, y: y }, speed, egret.Ease.sineOut);
-    };
-    //轮胎转动
-    BaseCar.prototype.startAnimation = function () {
-        var _this = this;
-        for (var j = 0; j < 2; j++) {
-            if (this.timberInterval[j]) {
-                clearInterval(this.timberInterval[j]);
-            }
-            this.lunArray[j].rotation = 360;
-            this.timberInterval[j] = setInterval(function () {
-                _this.lunArray[0].rotation -= _this.rotations;
-                _this.lunArray[1].rotation -= _this.rotations;
-            }, .2);
-        }
+        tw.to({ x: x, y: y }, 2000, egret.Ease.sineOut);
     };
     //加速火苗
     BaseCar.prototype.speedUp = function (i) {
@@ -110,7 +97,7 @@ var BaseCar = (function (_super) {
             if (that.fire) {
                 that.removeChild(that.fire);
             }
-        }, 1500);
+        }, this.nowSpeed);
     };
     //初始化小车样式
     BaseCar.prototype.onGroupComplete = function (i) {
@@ -129,6 +116,20 @@ var BaseCar = (function (_super) {
         }
         this.lunArray[0].x = 15 + 29;
         this.lunArray[1].x = 15 + 147;
+    };
+    //轮胎转动
+    BaseCar.prototype.startAnimation = function () {
+        var _this = this;
+        for (var j = 0; j < 2; j++) {
+            if (this.timberInterval[j]) {
+                clearInterval(this.timberInterval[j]);
+            }
+            this.lunArray[j].rotation = 360;
+            this.timberInterval[j] = setInterval(function () {
+                _this.lunArray[0].rotation -= _this.rotations;
+                _this.lunArray[1].rotation -= _this.rotations;
+            }, .2);
+        }
     };
     return BaseCar;
 }(egret.DisplayObjectContainer));

@@ -39,6 +39,8 @@ var GameScene = (function (_super) {
         var outSide = this.tool.gitData();
         this.array = outSide.returna; //每次距离
         this.arrayBtn = outSide.returnb; //排序编号
+        console.log(this.array);
+        egret.localStorage.setItem('arrayBtn', JSON.stringify(this.arrayBtn[9]));
         this.arraySelect = outSide.returnc; //火苗
         var distanceX = [144, 131, 119, 108, 96, 84, 78, 62, 50, 38];
         for (var i = 0; i < 10; i++) {
@@ -61,17 +63,19 @@ var GameScene = (function (_super) {
         if (pass > this.timeInterval * 2) {
             return;
         }
-        if (this.countTemp >= 90) {
-            this.scrollBg(pass);
-        }
+        this.scrollBg(pass);
         if (this.count < this.array[0].length - 1) {
-            if (this.countTemp % 90 == 0) {
+            if (this.countTemp % 120 == 0 || this.countTemp == 4) {
                 this.carRun();
             }
         }
         else {
-            Global.replaceScene(new GameOverScene());
+            this.countTemp = 0;
             this.removeEventListener(egret.Event.ENTER_FRAME, this.onEnterFrame, this);
+            var countDown = setTimeout(function () {
+                Global.replaceScene(new GameOverScene());
+                clearInterval(countDown);
+            }, 2000);
         }
     };
     GameScene.prototype.scrollBg = function (pass) {
@@ -108,12 +112,12 @@ var GameScene = (function (_super) {
             for (var i = 0; i < 10; i++) {
                 this.carName[i].startAnimation(); //轮胎
                 if (this.count == 9) {
-                    this.carName[i].fly(this.array[this.count][i], 214 + 56 + 64 * (9 - i), 1500);
+                    this.carName[i].fly(this.array[this.count][i], 214 + 56 + 64 * (9 - i), 2000);
                 }
                 else {
-                    this.carName[i].fly(1080 - this.array[this.count][i], 214 + 56 + 64 * (9 - i), 1500);
+                    this.carName[i].fly(1080 - this.array[this.count][i], 214 + 56 + 64 * (9 - i), 2000);
                 }
-                this.btnName[i].fly(1080 - (this.arrayBtn[this.count][i]) * 83.7 - 83.7, 106, 4000);
+                this.btnName[i].fly(1080 - (this.arrayBtn[this.count][i]) * 83.7 - 83.7, 106, 20000);
             }
         }
     };

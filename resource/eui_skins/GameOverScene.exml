@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <e:Skin class="GameOverSceneSkin" width="1080" height="1016" xmlns:e="http://ns.egret.com/eui"
         xmlns:w="http://ns.egret.com/wing">
+
 	<w:Config id="170ae04887b"></w:Config>
 	<e:Image id="bg" source="overBg_png" x="0" y="0" />
-	<e:Image id="one" source="one_png" x="421" y="348" />
-	<e:Image id="two" source="two_png"  x="174" y="390" />
-	<e:Image id="three" source="three_png" x="767" y="390" />
+	<!--<e:Image id="one" source="one_png" x="421" y="348" />
+	<e:Image id="two" source="two_png" x="174" y="390" />
+	<e:Image id="three" source="three_png" x="767" y="390" />-->
 </e:Skin>

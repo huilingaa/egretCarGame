@@ -31,10 +31,25 @@ var GameStartScene = (function (_super) {
             this.btnName[i].appear(102.9 * i + 79, 194);
             this.btnName[i].setScale(1.2);
             this.addChild(this.btnName[i]);
-            this.startCar[i] = new btnSort('sCar' + (i + 1) + '_png');
+            this.startCar[i] = new startCar('sCar' + (i + 1) + '_png');
             this.startCar[i].appear(108 * i + 52, 772);
             this.addChild(this.startCar[i]);
         }
+    };
+    GameStartScene.prototype.tweenCar = function () {
+        for (var i = 0; i < 3; i++) {
+            this.startCar[i].fly(536, 540, 1000);
+        }
+        for (var i = 3; i < 7; i++) {
+            this.startCar[i].fly(540, 540, 1000);
+        }
+        for (var i = 7; i < 10; i++) {
+            this.startCar[i].fly(546, 540, 1000);
+        }
+        var countDown = setTimeout(function () {
+            Global.replaceScene(new GameScene());
+            clearInterval(countDown);
+        }, 1000);
     };
     GameStartScene.prototype.toggleMusic = function () {
         var leftTime = new egret.Bitmap();
@@ -48,7 +63,7 @@ var GameStartScene = (function (_super) {
         this.countDown.x = 497;
         this.countDown.y = 523;
         this.countDown.size = 124;
-        var count = 3;
+        var count = 4;
         var countLight = 0;
         var that = this;
         that.countDown.text = count.toString();
@@ -60,8 +75,9 @@ var GameStartScene = (function (_super) {
                 that.countDown.text = count.toString();
             }
             else {
-                Global.replaceScene(new GameScene());
+                that.countDown.text = "";
                 clearInterval(countDown);
+                that.tweenCar();
             }
         }, 1000);
     };

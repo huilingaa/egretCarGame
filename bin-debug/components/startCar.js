@@ -17,9 +17,10 @@ var startCar = (function (_super) {
         this.x = x;
         this.y = y;
     };
-    startCar.prototype.fly = function (x, y) {
-        this.x = x;
-        this.y = y;
+    startCar.prototype.fly = function (x, y, speed) {
+        egret.Tween.removeTweens(this);
+        egret.Tween.get(this, {}).
+            to({ scaleX: 0.1, scaleY: 0.1, x: x, y: y }, 1000, egret.Ease.sineOut);
     };
     return startCar;
 }(BaseObject));

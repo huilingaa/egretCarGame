@@ -4,6 +4,7 @@ class BaseCar extends egret.DisplayObjectContainer {
 	private timberInterval2: number
 	public timberInterval: any = [
 		this.timberInterval1, this.timberInterval1];
+	private nowSpeed: number = 2000
 	private rotations: number = 10
 	public lun1: egret.Bitmap
 	public lun2: egret.Bitmap
@@ -24,21 +25,9 @@ class BaseCar extends egret.DisplayObjectContainer {
 	public fly(x: number, y: number, speed: number) {
 		egret.Tween.removeTweens(this)
 		var tw = egret.Tween.get(this, {});
-		tw.to({ x, y }, speed, egret.Ease.sineOut)
+		tw.to({ x, y }, 2000, egret.Ease.sineOut)
 	}
-	//轮胎转动
-	private startAnimation(): void {
-		for (var j = 0; j < 2; j++) {
-			if (this.timberInterval[j]) {
-				clearInterval(this.timberInterval[j])
-			}
-			this.lunArray[j].rotation = 360
-			this.timberInterval[j] = setInterval(() => {
-				this.lunArray[0].rotation -= this.rotations
-				this.lunArray[1].rotation -= this.rotations
-			}, .2)
-		}
-	}
+
 	//加速火苗
 	private speedUp(i): void {
 		var that = this;
@@ -51,7 +40,7 @@ class BaseCar extends egret.DisplayObjectContainer {
 			if (that.fire) {
 				that.removeChild(that.fire);
 			}
-		}, 1500)
+		}, this.nowSpeed)
 	}
 
 	//初始化小车样式
@@ -71,5 +60,18 @@ class BaseCar extends egret.DisplayObjectContainer {
 		}
 		this.lunArray[0].x = 15 + 29
 		this.lunArray[1].x = 15 + 147
+	}
+	//轮胎转动
+	private startAnimation(): void {
+		for (var j = 0; j < 2; j++) {
+			if (this.timberInterval[j]) {
+				clearInterval(this.timberInterval[j])
+			}
+			this.lunArray[j].rotation = 360
+			this.timberInterval[j] = setInterval(() => {
+				this.lunArray[0].rotation -= this.rotations
+				this.lunArray[1].rotation -= this.rotations
+			}, .2)
+		}
 	}
 }

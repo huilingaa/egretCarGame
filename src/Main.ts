@@ -35,15 +35,14 @@ class Main extends egret.DisplayObjectContainer {
         this.createGameScene();
     }
 
-
-
     private async loadResource() {
         try {
-            const loadingView = new LoadingUI();
-            this.stage.addChild(loadingView);
-            await RES.loadConfig("resource/default.res.json", "resource/");
+            await RES.loadConfig("resource/default.res.json", "resource/");//加载配置表
+            await RES.loadGroup("loading");//加载loading组
             await this.loadTheme();
-            await RES.loadGroup("preload", 0, loadingView);
+            const loadingView = new LoadingUI();//创建loadingUI实例
+            this.stage.addChild(loadingView);
+            await RES.loadGroup("preload", 0, loadingView);//加载默认preload组资源,并执行loadingView
             this.stage.removeChild(loadingView);
         }
         catch (e) {
@@ -51,15 +50,14 @@ class Main extends egret.DisplayObjectContainer {
         }
     }
 
+
+
     private loadTheme() {
         return new Promise((resolve, reject) => {
-            // load skin theme configuration file, you can manually modify the file. And replace the default skin.
-            //加载皮肤主题配置文件,可以手动修改这个文件。替换默认皮肤。
             let theme = new eui.Theme("resource/default.thm.json", this.stage);
             theme.addEventListener(eui.UIEvent.COMPLETE, () => {
                 resolve();
             }, this);
-
         })
     }
 
@@ -70,10 +68,7 @@ class Main extends egret.DisplayObjectContainer {
         return result;
     }
 
-    /**
-     * 创建游戏场景
-     * Create a game scene
-     */
+    //创建游戏场景
     private createGameScene() {
         // Global.addScene(new GameScene())
         // Global.addScene(new GameOverScene())

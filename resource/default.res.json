@@ -1,345 +1,349 @@
 {
-	"resources": [
-		{
-			"name": "description_json",
-			"type": "json",
-			"url": "config/description.json"
-		},
-		{
-			"name": "sCar2_png",
-			"type": "image",
-			"url": "assets/start/sCar2.png"
-		},
-		{
-			"name": "sCar3_png",
-			"type": "image",
-			"url": "assets/start/sCar3.png"
-		},
-		{
-			"name": "sCar4_png",
-			"type": "image",
-			"url": "assets/start/sCar4.png"
-		},
-		{
-			"name": "sCar5_png",
-			"type": "image",
-			"url": "assets/start/sCar5.png"
-		},
-		{
-			"name": "sCar6_png",
-			"type": "image",
-			"url": "assets/start/sCar6.png"
-		},
-		{
-			"name": "sCar8_png",
-			"type": "image",
-			"url": "assets/start/sCar8.png"
-		},
-		{
-			"name": "sCar9_png",
-			"type": "image",
-			"url": "assets/start/sCar9.png"
-		},
-		{
-			"name": "sCar10_png",
-			"type": "image",
-			"url": "assets/start/sCar10.png"
-		},
-		{
-			"name": "startBg_png",
-			"type": "image",
-			"url": "assets/start/startBg.png"
-		},
-		{
-			"name": "sCar1_png",
-			"type": "image",
-			"url": "assets/start/sCar1.png"
-		},
-		{
-			"name": "sCar7_png",
-			"type": "image",
-			"url": "assets/start/sCar7.png"
-		},
-		{
-			"name": "lamp1_png",
-			"type": "image",
-			"url": "assets/start/lamp1.png"
-		},
-		{
-			"name": "lamp2_png",
-			"type": "image",
-			"url": "assets/start/lamp2.png"
-		},
-		{
-			"name": "lamp3_png",
-			"type": "image",
-			"url": "assets/start/lamp3.png"
-		},
-		{
-			"name": "lamp4_png",
-			"type": "image",
-			"url": "assets/start/lamp4.png"
-		},
-		{
-			"name": "lamp0_png",
-			"type": "image",
-			"url": "assets/start/lamp0.png"
-		},
-		{
-			"name": "three_png",
-			"type": "image",
-			"url": "assets/over/three.png"
-		},
-		{
-			"name": "two_png",
-			"type": "image",
-			"url": "assets/over/two.png"
-		},
-		{
-			"name": "one_png",
-			"type": "image",
-			"url": "assets/over/one.png"
-		},
-		{
-			"name": "over9_png",
-			"type": "image",
-			"url": "assets/over/over9.png"
-		},
-		{
-			"name": "over5_png",
-			"type": "image",
-			"url": "assets/over/over5.png"
-		},
-		{
-			"name": "over6_png",
-			"type": "image",
-			"url": "assets/over/over6.png"
-		},
-		{
-			"name": "over3_png",
-			"type": "image",
-			"url": "assets/over/over3.png"
-		},
-		{
-			"name": "over2_png",
-			"type": "image",
-			"url": "assets/over/over2.png"
-		},
-		{
-			"name": "over4_png",
-			"type": "image",
-			"url": "assets/over/over4.png"
-		},
-		{
-			"name": "over1_png",
-			"type": "image",
-			"url": "assets/over/over1.png"
-		},
-		{
-			"name": "over8_png",
-			"type": "image",
-			"url": "assets/over/over8.png"
-		},
-		{
-			"name": "over7_png",
-			"type": "image",
-			"url": "assets/over/over7.png"
-		},
-		{
-			"name": "over10_png",
-			"type": "image",
-			"url": "assets/over/over10.png"
-		},
-		{
-			"name": "car1_png",
-			"type": "image",
-			"url": "assets/playing/car1.png"
-		},
-		{
-			"name": "car10_png",
-			"type": "image",
-			"url": "assets/playing/car10.png"
-		},
-		{
-			"name": "car2_png",
-			"type": "image",
-			"url": "assets/playing/car2.png"
-		},
-		{
-			"name": "car3_png",
-			"type": "image",
-			"url": "assets/playing/car3.png"
-		},
-		{
-			"name": "car4_png",
-			"type": "image",
-			"url": "assets/playing/car4.png"
-		},
-		{
-			"name": "car5_png",
-			"type": "image",
-			"url": "assets/playing/car5.png"
-		},
-		{
-			"name": "car6_png",
-			"type": "image",
-			"url": "assets/playing/car6.png"
-		},
-		{
-			"name": "car7_png",
-			"type": "image",
-			"url": "assets/playing/car7.png"
-		},
-		{
-			"name": "car8_png",
-			"type": "image",
-			"url": "assets/playing/car8.png"
-		},
-		{
-			"name": "car9_png",
-			"type": "image",
-			"url": "assets/playing/car9.png"
-		},
-		{
-			"name": "fire_png",
-			"type": "image",
-			"url": "assets/playing/fire.png"
-		},
-		{
-			"name": "lun_png",
-			"type": "image",
-			"url": "assets/playing/lun.png"
-		},
-		{
-			"name": "calendar_png",
-			"type": "image",
-			"url": "assets/com/calendar.png"
-		},
-		{
-			"name": "endRoad_png",
-			"type": "image",
-			"url": "assets/com/endRoad.png"
-		},
-		{
-			"name": "left_png",
-			"type": "image",
-			"url": "assets/com/left.png"
-		},
-		{
-			"name": "leftSquare_png",
-			"type": "image",
-			"url": "assets/com/leftSquare.png"
-		},
-		{
-			"name": "logo_png",
-			"type": "image",
-			"url": "assets/com/logo.png"
-		},
-		{
-			"name": "right_png",
-			"type": "image",
-			"url": "assets/com/right.png"
-		},
-		{
-			"name": "rightSquare_png",
-			"type": "image",
-			"url": "assets/com/rightSquare.png"
-		},
-		{
-			"name": "road_png",
-			"type": "image",
-			"url": "assets/com/road.png"
-		},
-		{
-			"name": "shengyin_png",
-			"type": "image",
-			"url": "assets/com/shengyin.png"
-		},
-		{
-			"name": "top_png",
-			"type": "image",
-			"url": "assets/com/top.png"
-		},
-		{
-			"name": "1_png",
-			"type": "image",
-			"url": "assets/com/btn/1.png"
-		},
-		{
-			"name": "10_png",
-			"type": "image",
-			"url": "assets/com/btn/10.png"
-		},
-		{
-			"name": "2_png",
-			"type": "image",
-			"url": "assets/com/btn/2.png"
-		},
-		{
-			"name": "3_png",
-			"type": "image",
-			"url": "assets/com/btn/3.png"
-		},
-		{
-			"name": "4_png",
-			"type": "image",
-			"url": "assets/com/btn/4.png"
-		},
-		{
-			"name": "5_png",
-			"type": "image",
-			"url": "assets/com/btn/5.png"
-		},
-		{
-			"name": "6_png",
-			"type": "image",
-			"url": "assets/com/btn/6.png"
-		},
-		{
-			"name": "7_png",
-			"type": "image",
-			"url": "assets/com/btn/7.png"
-		},
-		{
-			"name": "8_png",
-			"type": "image",
-			"url": "assets/com/btn/8.png"
-		},
-		{
-			"name": "9_png",
-			"type": "image",
-			"url": "assets/com/btn/9.png"
-		},
-		{
-			"name": "bullet_mp3",
-			"type": "sound",
-			"url": "assets/com/sound/bullet.mp3"
-		},
-		{
-			"name": "StarWar_mp3",
-			"type": "sound",
-			"url": "assets/com/sound/StarWar.mp3"
-		},
-		{
-			"name": "overBg_png",
-			"type": "image",
-			"url": "assets/over/overBg.png"
-		},
-		{
-			"name": "loading_png",
-			"type": "image",
-			"url": "assets/com/loading.png"
-		},
-		{
-			"name": "loadBg_png",
-			"type": "image",
-			"url": "assets/com/loadBg.png"
-		}
-	],
 	"groups": [
 		{
-			"name": "preload",
-			"keys": "description_json,sCar2_png,sCar3_png,sCar4_png,sCar5_png,sCar6_png,sCar8_png,sCar9_png,sCar10_png,startBg_png,sCar1_png,sCar7_png,lamp1_png,lamp2_png,lamp3_png,lamp4_png,lamp0_png,three_png,two_png,one_png,over9_png,over5_png,over6_png,over3_png,over2_png,over4_png,over1_png,over8_png,over7_png,over10_png,car1_png,car10_png,car2_png,car3_png,car4_png,car5_png,car6_png,car7_png,car8_png,car9_png,fire_png,lun_png,calendar_png,endRoad_png,left_png,leftSquare_png,logo_png,right_png,rightSquare_png,road_png,shengyin_png,top_png,1_png,10_png,2_png,3_png,4_png,5_png,6_png,7_png,8_png,9_png,bullet_mp3,StarWar_mp3,overBg_png,loading_png,loadBg_png"
+			"keys": "description_json,sCar2_png,sCar3_png,sCar4_png,sCar5_png,sCar6_png,sCar8_png,sCar9_png,sCar10_png,startBg_png,sCar1_png,sCar7_png,lamp1_png,lamp2_png,lamp3_png,lamp4_png,lamp0_png,three_png,two_png,one_png,over9_png,over5_png,over6_png,over3_png,over2_png,over4_png,over1_png,over8_png,over7_png,over10_png,car1_png,car10_png,car2_png,car3_png,car4_png,car5_png,car6_png,car7_png,car8_png,car9_png,fire_png,lun_png,calendar_png,endRoad_png,left_png,leftSquare_png,logo_png,right_png,rightSquare_png,road_png,shengyin_png,top_png,1_png,10_png,2_png,3_png,4_png,5_png,6_png,7_png,8_png,9_png,bullet_mp3,StarWar_mp3,overBg_png,loading_png,loadBg_png",
+			"name": "preload"
+		},
+		{
+			"keys": "loading_png,loadBg_png",
+			"name": "loading"
+		}
+	],
+	"resources": [
+		{
+			"url": "config/description.json",
+			"type": "json",
+			"name": "description_json"
+		},
+		{
+			"url": "assets/start/sCar2.png",
+			"type": "image",
+			"name": "sCar2_png"
+		},
+		{
+			"url": "assets/start/sCar3.png",
+			"type": "image",
+			"name": "sCar3_png"
+		},
+		{
+			"url": "assets/start/sCar4.png",
+			"type": "image",
+			"name": "sCar4_png"
+		},
+		{
+			"url": "assets/start/sCar5.png",
+			"type": "image",
+			"name": "sCar5_png"
+		},
+		{
+			"url": "assets/start/sCar6.png",
+			"type": "image",
+			"name": "sCar6_png"
+		},
+		{
+			"url": "assets/start/sCar8.png",
+			"type": "image",
+			"name": "sCar8_png"
+		},
+		{
+			"url": "assets/start/sCar9.png",
+			"type": "image",
+			"name": "sCar9_png"
+		},
+		{
+			"url": "assets/start/sCar10.png",
+			"type": "image",
+			"name": "sCar10_png"
+		},
+		{
+			"url": "assets/start/startBg.png",
+			"type": "image",
+			"name": "startBg_png"
+		},
+		{
+			"url": "assets/start/sCar1.png",
+			"type": "image",
+			"name": "sCar1_png"
+		},
+		{
+			"url": "assets/start/sCar7.png",
+			"type": "image",
+			"name": "sCar7_png"
+		},
+		{
+			"url": "assets/start/lamp1.png",
+			"type": "image",
+			"name": "lamp1_png"
+		},
+		{
+			"url": "assets/start/lamp2.png",
+			"type": "image",
+			"name": "lamp2_png"
+		},
+		{
+			"url": "assets/start/lamp3.png",
+			"type": "image",
+			"name": "lamp3_png"
+		},
+		{
+			"url": "assets/start/lamp4.png",
+			"type": "image",
+			"name": "lamp4_png"
+		},
+		{
+			"url": "assets/start/lamp0.png",
+			"type": "image",
+			"name": "lamp0_png"
+		},
+		{
+			"url": "assets/over/three.png",
+			"type": "image",
+			"name": "three_png"
+		},
+		{
+			"url": "assets/over/two.png",
+			"type": "image",
+			"name": "two_png"
+		},
+		{
+			"url": "assets/over/one.png",
+			"type": "image",
+			"name": "one_png"
+		},
+		{
+			"url": "assets/over/over9.png",
+			"type": "image",
+			"name": "over9_png"
+		},
+		{
+			"url": "assets/over/over5.png",
+			"type": "image",
+			"name": "over5_png"
+		},
+		{
+			"url": "assets/over/over6.png",
+			"type": "image",
+			"name": "over6_png"
+		},
+		{
+			"url": "assets/over/over3.png",
+			"type": "image",
+			"name": "over3_png"
+		},
+		{
+			"url": "assets/over/over2.png",
+			"type": "image",
+			"name": "over2_png"
+		},
+		{
+			"url": "assets/over/over4.png",
+			"type": "image",
+			"name": "over4_png"
+		},
+		{
+			"url": "assets/over/over1.png",
+			"type": "image",
+			"name": "over1_png"
+		},
+		{
+			"url": "assets/over/over8.png",
+			"type": "image",
+			"name": "over8_png"
+		},
+		{
+			"url": "assets/over/over7.png",
+			"type": "image",
+			"name": "over7_png"
+		},
+		{
+			"url": "assets/over/over10.png",
+			"type": "image",
+			"name": "over10_png"
+		},
+		{
+			"url": "assets/playing/car1.png",
+			"type": "image",
+			"name": "car1_png"
+		},
+		{
+			"url": "assets/playing/car10.png",
+			"type": "image",
+			"name": "car10_png"
+		},
+		{
+			"url": "assets/playing/car2.png",
+			"type": "image",
+			"name": "car2_png"
+		},
+		{
+			"url": "assets/playing/car3.png",
+			"type": "image",
+			"name": "car3_png"
+		},
+		{
+			"url": "assets/playing/car4.png",
+			"type": "image",
+			"name": "car4_png"
+		},
+		{
+			"url": "assets/playing/car5.png",
+			"type": "image",
+			"name": "car5_png"
+		},
+		{
+			"url": "assets/playing/car6.png",
+			"type": "image",
+			"name": "car6_png"
+		},
+		{
+			"url": "assets/playing/car7.png",
+			"type": "image",
+			"name": "car7_png"
+		},
+		{
+			"url": "assets/playing/car8.png",
+			"type": "image",
+			"name": "car8_png"
+		},
+		{
+			"url": "assets/playing/car9.png",
+			"type": "image",
+			"name": "car9_png"
+		},
+		{
+			"url": "assets/playing/fire.png",
+			"type": "image",
+			"name": "fire_png"
+		},
+		{
+			"url": "assets/playing/lun.png",
+			"type": "image",
+			"name": "lun_png"
+		},
+		{
+			"url": "assets/com/calendar.png",
+			"type": "image",
+			"name": "calendar_png"
+		},
+		{
+			"url": "assets/com/endRoad.png",
+			"type": "image",
+			"name": "endRoad_png"
+		},
+		{
+			"url": "assets/com/left.png",
+			"type": "image",
+			"name": "left_png"
+		},
+		{
+			"url": "assets/com/leftSquare.png",
+			"type": "image",
+			"name": "leftSquare_png"
+		},
+		{
+			"url": "assets/com/logo.png",
+			"type": "image",
+			"name": "logo_png"
+		},
+		{
+			"url": "assets/com/right.png",
+			"type": "image",
+			"name": "right_png"
+		},
+		{
+			"url": "assets/com/rightSquare.png",
+			"type": "image",
+			"name": "rightSquare_png"
+		},
+		{
+			"url": "assets/com/road.png",
+			"type": "image",
+			"name": "road_png"
+		},
+		{
+			"url": "assets/com/shengyin.png",
+			"type": "image",
+			"name": "shengyin_png"
+		},
+		{
+			"url": "assets/com/top.png",
+			"type": "image",
+			"name": "top_png"
+		},
+		{
+			"url": "assets/com/btn/1.png",
+			"type": "image",
+			"name": "1_png"
+		},
+		{
+			"url": "assets/com/btn/10.png",
+			"type": "image",
+			"name": "10_png"
+		},
+		{
+			"url": "assets/com/btn/2.png",
+			"type": "image",
+			"name": "2_png"
+		},
+		{
+			"url": "assets/com/btn/3.png",
+			"type": "image",
+			"name": "3_png"
+		},
+		{
+			"url": "assets/com/btn/4.png",
+			"type": "image",
+			"name": "4_png"
+		},
+		{
+			"url": "assets/com/btn/5.png",
+			"type": "image",
+			"name": "5_png"
+		},
+		{
+			"url": "assets/com/btn/6.png",
+			"type": "image",
+			"name": "6_png"
+		},
+		{
+			"url": "assets/com/btn/7.png",
+			"type": "image",
+			"name": "7_png"
+		},
+		{
+			"url": "assets/com/btn/8.png",
+			"type": "image",
+			"name": "8_png"
+		},
+		{
+			"url": "assets/com/btn/9.png",
+			"type": "image",
+			"name": "9_png"
+		},
+		{
+			"url": "assets/com/sound/bullet.mp3",
+			"type": "sound",
+			"name": "bullet_mp3"
+		},
+		{
+			"url": "assets/com/sound/StarWar.mp3",
+			"type": "sound",
+			"name": "StarWar_mp3"
+		},
+		{
+			"url": "assets/over/overBg.png",
+			"type": "image",
+			"name": "overBg_png"
+		},
+		{
+			"url": "assets/com/loading.png",
+			"type": "image",
+			"name": "loading_png"
+		},
+		{
+			"url": "assets/com/loadBg.png",
+			"type": "image",
+			"name": "loadBg_png"
 		}
 	]
 }

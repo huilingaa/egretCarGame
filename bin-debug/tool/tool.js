@@ -55,7 +55,7 @@ var tool = (function () {
         for (var i = 0; i < 10; i++) {
             this.array[i] = new Array();
             for (var j = 0; j < 9; j++) {
-                this.array[i][j] = this.random_num(0, 900);
+                this.array[i][j] = this.random_num(243, 837);
                 this.array[i][9] = -this.random_num(243, 1080);
             }
         }
