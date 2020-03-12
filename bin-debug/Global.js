@@ -15,7 +15,6 @@ var Global = (function () {
         this.stage.addChild(scene);
     };
     Global.painting = function (that, painting, item) {
-        console.log(item);
         that.addChild(painting);
         painting.x = item.x;
         painting.y = item.y;

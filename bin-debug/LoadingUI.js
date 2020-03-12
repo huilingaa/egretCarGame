@@ -23,7 +23,7 @@ var LoadingUI = (function (_super) {
     };
     LoadingUI.prototype.onProgress = function (current, total) {
         var text = (current / total) * 100;
-        var t = parseInt(text.toString());
+        var t = parseInt(text.toString()) + 2;
         this.textField.text = "" + t + '%';
         var temp = t / 100 * 16;
         for (var i = 0; i <= temp; i++) {

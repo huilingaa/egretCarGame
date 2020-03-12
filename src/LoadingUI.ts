@@ -16,7 +16,7 @@ class LoadingUI extends egret.Sprite implements RES.PromiseTaskReporter {
 
     public onProgress(current: number, total: number): void {
         var text = (current / total) * 100;
-        var t = parseInt(text.toString())
+        var t = parseInt(text.toString())+2
         this.textField.text = `${t}` + '%';
         var temp = t / 100 * 16
         for (var i = 0; i <= temp; i++) {

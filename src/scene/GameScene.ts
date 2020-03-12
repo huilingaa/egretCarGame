@@ -39,7 +39,7 @@ class GameScene extends eui.Component implements eui.UIComponent {
 		var outSide = this.tool.gitData();
 		this.array = outSide.returna//每次距离
 		this.arrayBtn = outSide.returnb//排序编号
-		egret.localStorage.setItem('arrayBtn', JSON.stringify(this.arrayBtn[9]));
+		egret.localStorage.setItem('arrayBtn', JSON.stringify(this.arrayBtn[8]));
 		this.arraySelect = outSide.returnc//火苗
 		var distanceX = [144, 131, 119, 108, 96, 84, 78, 62, 50, 38];
 		for (var i = 0; i < 10; i++) {
@@ -73,7 +73,7 @@ class GameScene extends eui.Component implements eui.UIComponent {
 			var countDown = setTimeout(function () {
 				Global.replaceScene(new GameOverScene());
 				clearInterval(countDown);
-			}, 2000)
+			}, 4000)
 		}
 	}
 
@@ -112,7 +112,7 @@ class GameScene extends eui.Component implements eui.UIComponent {
 			for (var i = 0; i < 10; i++) {
 				this.carName[i].startAnimation();//轮胎
 				if (this.count == 9) {
-					this.carName[i].fly(this.array[this.count][i], 214 + 56 + 64 * (9 - i), 2000)
+					this.carName[i].fly(-(this.array[8][i] * 2), 214 + 56 + 64 * (9 - i), 4000)
 				} else {
 					this.carName[i].fly(1080 - this.array[this.count][i], 214 + 56 + 64 * (9 - i), 2000)
 				}

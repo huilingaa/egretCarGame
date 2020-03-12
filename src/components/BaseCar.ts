@@ -25,7 +25,12 @@ class BaseCar extends egret.DisplayObjectContainer {
 	public fly(x: number, y: number, speed: number) {
 		egret.Tween.removeTweens(this)
 		var tw = egret.Tween.get(this, {});
-		tw.to({ x, y }, 2000, egret.Ease.sineOut)
+		tw.to({ x, y }, speed, egret.Ease.sineOut)
+	}
+	public flyend(x: number, y: number, speed: number) {
+		egret.Tween.removeTweens(this)
+		var tw = egret.Tween.get(this, {});
+		tw.to({ x, y })
 	}
 
 	//加速火苗

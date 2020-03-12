@@ -67,11 +67,11 @@ var tool = (function () {
         for (var i = 0; i < 10; i++) {
             arr[i] = [];
             for (var j = 0; j < 10; j++) {
-                if (i == 0 && this.newFire[0][j] > 500) {
+                if (i == 0 && this.newFire[0][j] > 400) {
                     arr[0].push(j + 1);
                 }
                 if (i > 0 && i < 9) {
-                    if (this.newFire[i][j] - this.newFire[i - 1][j] >= 500) {
+                    if (this.newFire[i][j] - this.newFire[i - 1][j] >= 400) {
                         arr[i].push(j + 1);
                     }
                 }

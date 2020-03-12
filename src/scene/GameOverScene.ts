@@ -8,20 +8,20 @@ class GameOverScene extends eui.Component implements eui.UIComponent {
 		super.childrenCreated();
 		this.init()
 	}
-	//初始化
+	//初始化  越大越快
 	private init() {
-		var optionss = JSON.parse(egret.localStorage.getItem('arrayBtn')) || [8, 2, 10, 1, 7, 6, 3, 5, 4, 9];
+		var optionss = JSON.parse(egret.localStorage.getItem('arrayBtn')) || [10, 6, 8, 9, 1, 5, 7, 2, 4, 3];
 		this.gameOther = new gameOther()
 		this.gameOther.onFont('20200221173', '11:45', 'playOver');
 		this.addChild(this.gameOther)
 		var btnAry = []; var tempAry = [];
 		for (var i = 0; i < 10; i++) {
 			btnAry[i] = new btnSort((i + 1) + '_png')
-			btnAry[i].appear((optionss[i]) * 102.9 - 25, 194)
+			btnAry[i].appear(1080 - optionss[i] * 102.9 + 25, 194)
 			btnAry[i].setScale(1.2);
 			this.addChild(btnAry[i])
 		}
-		var nameList = [optionss.indexOf(2) + 1, optionss.indexOf(3) + 1, optionss.indexOf(1) + 1]
+		var nameList = [optionss.indexOf(9) + 1, optionss.indexOf(8) + 1, optionss.indexOf(10) + 1]
 		this.initImg(nameList);
 	}
 	public initImg(nameList: any) {
@@ -70,6 +70,5 @@ class GameOverScene extends eui.Component implements eui.UIComponent {
 				to({ x: item.fontX, y: item.fontY + 14 }, 800, egret.Ease.sineIn).
 				to({ x: item.fontX, y: item.fontY + 4 }, 800, egret.Ease.sineIn);
 		})
-
 	}
 }

@@ -83,7 +83,12 @@ var BaseCar = (function (_super) {
     BaseCar.prototype.fly = function (x, y, speed) {
         egret.Tween.removeTweens(this);
         var tw = egret.Tween.get(this, {});
-        tw.to({ x: x, y: y }, 2000, egret.Ease.sineOut);
+        tw.to({ x: x, y: y }, speed, egret.Ease.sineOut);
+    };
+    BaseCar.prototype.flyend = function (x, y, speed) {
+        egret.Tween.removeTweens(this);
+        var tw = egret.Tween.get(this, {});
+        tw.to({ x: x, y: y });
     };
     //加速火苗
     BaseCar.prototype.speedUp = function (i) {
