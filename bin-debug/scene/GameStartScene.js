@@ -78,4 +78,3 @@ var GameStartScene = (function (_super) {
     return GameStartScene;
 }(eui.Component));
 __reflect(GameStartScene.prototype, "GameStartScene", ["eui.UIComponent", "egret.DisplayObject"]);
-//# sourceMappingURL=GameStartScene.js.map

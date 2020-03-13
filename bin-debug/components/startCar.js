@@ -25,4 +25,3 @@ var startCar = (function (_super) {
     return startCar;
 }(BaseObject));
 __reflect(startCar.prototype, "startCar");
-//# sourceMappingURL=startCar.js.map

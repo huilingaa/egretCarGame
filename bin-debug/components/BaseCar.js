@@ -134,4 +134,3 @@ var BaseCar = (function (_super) {
     return BaseCar;
 }(egret.DisplayObjectContainer));
 __reflect(BaseCar.prototype, "BaseCar");
-//# sourceMappingURL=BaseCar.js.map

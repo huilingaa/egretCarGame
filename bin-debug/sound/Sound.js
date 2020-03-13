@@ -161,4 +161,3 @@ var Sound = (function (_super) {
     return Sound;
 }(egret.DisplayObjectContainer));
 __reflect(Sound.prototype, "Sound");
-//# sourceMappingURL=Sound.js.map

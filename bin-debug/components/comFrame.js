@@ -142,4 +142,3 @@ var gameOther = (function (_super) {
     return gameOther;
 }(egret.DisplayObjectContainer));
 __reflect(gameOther.prototype, "gameOther");
-//# sourceMappingURL=comFrame.js.map

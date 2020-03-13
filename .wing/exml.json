@@ -23,5 +23,10 @@
         "path": "tool\\imgFont.ts",
         "class": "imgFont",
         "parentPath": ""
+    },
+    "170d187c9f6": {
+        "path": "sound\\demo.ts",
+        "class": "demo",
+        "parentPath": ""
     }
 }
