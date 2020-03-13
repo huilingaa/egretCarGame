@@ -87,3 +87,4 @@ var tool = (function () {
     return tool;
 }());
 __reflect(tool.prototype, "tool");
+//# sourceMappingURL=tool.js.map

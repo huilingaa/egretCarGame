@@ -24,6 +24,7 @@
 		"bin-debug/scene/GameOverScene.js",
 		"bin-debug/scene/GameScene.js",
 		"bin-debug/scene/GameStartScene.js",
+		"bin-debug/sound/demo.js",
 		"bin-debug/sound/Sound.js",
 		"bin-debug/tool/tool.js"
 	]

@@ -41,3 +41,4 @@ var BaseObject = (function (_super) {
     return BaseObject;
 }(egret.Sprite));
 __reflect(BaseObject.prototype, "BaseObject");
+//# sourceMappingURL=BaseObject.js.map

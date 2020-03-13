@@ -2,15 +2,30 @@ class gameOther extends egret.DisplayObjectContainer {
     public switchOpen: boolean = true;
     public control: boolean = true;
     public rightSound: eui.Image;
+    private _sound: egret.Sound;
+    private _channel: egret.SoundChannel;
     public constructor() {
         super();
         this.addEventListener(egret.Event.ADDED_TO_STAGE, this.onAddToStage, this);
     }
     private async onAddToStage(event: egret.Event) {
+        this._sound = new egret.Sound();
+        this._sound.load("resource/assets/com/sound/StarWar.mp3");
         RES.addEventListener(RES.ResourceEvent.GROUP_COMPLETE, this.toggleMusic, this);
         await RES.loadConfig("resource/default.res.json", "resource/");
         await RES.loadGroup("preload");
     }
+
+    public play(): void {
+        this._channel = this._sound.play();
+    }
+    public stop(): void {
+        if (this._channel) {
+            this._channel.stop();
+            this._channel = null;
+        }
+    }
+
     // 文字
     public onFont(font1: string, font2: string, state: string) {
         var arrBom = [{
@@ -77,6 +92,11 @@ class gameOther extends egret.DisplayObjectContainer {
         this.rightSound.touchEnabled = true;
         this.rightSound.addEventListener(egret.TouchEvent.TOUCH_TAP, (e) => {
             this.switchOpen = !this.switchOpen;
+            if (this.switchOpen) {
+                this.play();
+            } else {
+                this.stop();
+            }
             this.rightSound.source = this.switchOpen ? RES.getRes('shengyin_png') : RES.getRes('musicClose_png');
         }, this);
     }

@@ -33,3 +33,4 @@ var Global = (function () {
     return Global;
 }());
 __reflect(Global.prototype, "Global");
+//# sourceMappingURL=Global.js.map

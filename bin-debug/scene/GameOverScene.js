@@ -85,3 +85,4 @@ var GameOverScene = (function (_super) {
     return GameOverScene;
 }(eui.Component));
 __reflect(GameOverScene.prototype, "GameOverScene", ["eui.UIComponent", "egret.DisplayObject"]);
+//# sourceMappingURL=GameOverScene.js.map

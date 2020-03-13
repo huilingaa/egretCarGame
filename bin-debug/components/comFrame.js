@@ -57,6 +57,8 @@ var gameOther = (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
+                        this._sound = new egret.Sound();
+                        this._sound.load("resource/assets/com/sound/StarWar.mp3");
                         RES.addEventListener(RES.ResourceEvent.GROUP_COMPLETE, this.toggleMusic, this);
                         return [4 /*yield*/, RES.loadConfig("resource/default.res.json", "resource/")];
                     case 1:
@@ -68,6 +70,15 @@ var gameOther = (function (_super) {
                 }
             });
         });
+    };
+    gameOther.prototype.play = function () {
+        this._channel = this._sound.play();
+    };
+    gameOther.prototype.stop = function () {
+        if (this._channel) {
+            this._channel.stop();
+            this._channel = null;
+        }
     };
     // 文字
     gameOther.prototype.onFont = function (font1, font2, state) {
@@ -134,11 +145,19 @@ var gameOther = (function (_super) {
         this.rightSound = new eui.Image(RES.getRes('shengyin_png'));
         Global.painting(this, this.rightSound, { x: 1014, y: 53 });
         this.rightSound.touchEnabled = true;
+        // this.play();
         this.rightSound.addEventListener(egret.TouchEvent.TOUCH_TAP, function (e) {
             _this.switchOpen = !_this.switchOpen;
+            if (_this.switchOpen) {
+                _this.play();
+            }
+            else {
+                _this.stop();
+            }
             _this.rightSound.source = _this.switchOpen ? RES.getRes('shengyin_png') : RES.getRes('musicClose_png');
         }, this);
     };
     return gameOther;
 }(egret.DisplayObjectContainer));
 __reflect(gameOther.prototype, "gameOther");
+//# sourceMappingURL=comFrame.js.map

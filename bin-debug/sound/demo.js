@@ -8,20 +8,20 @@ var __extends = this && this.__extends || function __extends(t, e) {
 for (var i in e) e.hasOwnProperty(i) && (t[i] = e[i]);
 r.prototype = e.prototype, t.prototype = new r();
 };
-var GameStartScene = (function (_super) {
-    __extends(GameStartScene, _super);
-    function GameStartScene() {
+var GameStartScenea = (function (_super) {
+    __extends(GameStartScenea, _super);
+    function GameStartScenea() {
         var _this = _super.call(this) || this;
         _this.btnName = [];
         _this.startCar = [];
         return _this;
     }
-    GameStartScene.prototype.childrenCreated = function () {
+    GameStartScenea.prototype.childrenCreated = function () {
         _super.prototype.childrenCreated.call(this);
         this.init();
     };
     //实例化场景和动画加载
-    GameStartScene.prototype.init = function () {
+    GameStartScenea.prototype.init = function () {
         this.gameOther = new gameOther();
         this.gameOther.onFont('20200221173', '11:45', 'playStart');
         this.addChild(this.gameOther);
@@ -36,7 +36,7 @@ var GameStartScene = (function (_super) {
             this.addChild(this.startCar[i]);
         }
     };
-    GameStartScene.prototype.tweenCar = function () {
+    GameStartScenea.prototype.tweenCar = function () {
         for (var i = 0; i < 3; i++) {
             this.startCar[i].fly(536, 540, 1000);
         }
@@ -51,7 +51,7 @@ var GameStartScene = (function (_super) {
             clearInterval(countDown);
         }, 1000);
     };
-    GameStartScene.prototype.toggleMusic = function () {
+    GameStartScenea.prototype.toggleMusic = function () {
         var leftTime = new egret.Bitmap();
         leftTime.texture = RES.getRes("lamp0_png");
         Global.painting(this, leftTime, { x: 297, y: 222 });
@@ -75,7 +75,7 @@ var GameStartScene = (function (_super) {
             }
         }, 1000);
     };
-    return GameStartScene;
+    return GameStartScenea;
 }(eui.Component));
-__reflect(GameStartScene.prototype, "GameStartScene", ["eui.UIComponent", "egret.DisplayObject"]);
-//# sourceMappingURL=GameStartScene.js.map
+__reflect(GameStartScenea.prototype, "GameStartScenea", ["eui.UIComponent", "egret.DisplayObject"]);
+//# sourceMappingURL=demo.js.map
