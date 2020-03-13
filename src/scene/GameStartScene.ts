@@ -37,6 +37,7 @@ class GameStartScene extends eui.Component implements eui.UIComponent {
 			this.startCar[i].fly(546, 540, 1000)
 		}
 		var countDown = setTimeout(function () {
+
 			Global.replaceScene(new GameScene());
 			clearInterval(countDown);
 		}, 1000)

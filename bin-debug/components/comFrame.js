@@ -54,11 +54,13 @@ var gameOther = (function (_super) {
     }
     gameOther.prototype.onAddToStage = function (event) {
         return __awaiter(this, void 0, void 0, function () {
+            var sound;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
                         this._sound = new egret.Sound();
-                        this._sound.load("resource/assets/com/sound/StarWar.mp3");
+                        sound = ["resource/assets/com/sound/bullet.mp3"];
+                        this._sound.load("resource/assets/com/sound/bullet.mp3");
                         RES.addEventListener(RES.ResourceEvent.GROUP_COMPLETE, this.toggleMusic, this);
                         return [4 /*yield*/, RES.loadConfig("resource/default.res.json", "resource/")];
                     case 1:
@@ -138,23 +140,22 @@ var gameOther = (function (_super) {
         });
     };
     // 音乐样式与播放
-    gameOther.prototype.toggleMusic = function () {
+    gameOther.prototype.toggleMusic = function (state) {
         var _this = this;
         var that = this;
         Global.painting(this, new egret.Bitmap(RES.getRes("calendar_png")), { x: 20, y: 53 });
-        this.rightSound = new eui.Image(RES.getRes('shengyin_png'));
+        this.rightSound = new eui.Image(RES.getRes('musicClose_png'));
         Global.painting(this, this.rightSound, { x: 1014, y: 53 });
         this.rightSound.touchEnabled = true;
-        // this.play();
         this.rightSound.addEventListener(egret.TouchEvent.TOUCH_TAP, function (e) {
             _this.switchOpen = !_this.switchOpen;
             if (_this.switchOpen) {
-                _this.play();
-            }
-            else {
                 _this.stop();
             }
-            _this.rightSound.source = _this.switchOpen ? RES.getRes('shengyin_png') : RES.getRes('musicClose_png');
+            else {
+                _this.play();
+            }
+            _this.rightSound.source = _this.switchOpen ? RES.getRes('musicClose_png') : RES.getRes('shengyin_png');
         }, this);
     };
     return gameOther;

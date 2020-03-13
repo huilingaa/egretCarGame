@@ -10,7 +10,8 @@ class gameOther extends egret.DisplayObjectContainer {
     }
     private async onAddToStage(event: egret.Event) {
         this._sound = new egret.Sound();
-        this._sound.load("resource/assets/com/sound/StarWar.mp3");
+        var sound = ["resource/assets/com/sound/bullet.mp3"]
+        this._sound.load("resource/assets/com/sound/bullet.mp3");
         RES.addEventListener(RES.ResourceEvent.GROUP_COMPLETE, this.toggleMusic, this);
         await RES.loadConfig("resource/default.res.json", "resource/");
         await RES.loadGroup("preload");
@@ -84,20 +85,20 @@ class gameOther extends egret.DisplayObjectContainer {
 
     }
     // 音乐样式与播放
-    public toggleMusic() {
+    public toggleMusic(state: any) {
         var that = this
         Global.painting(this, new egret.Bitmap(RES.getRes("calendar_png")), { x: 20, y: 53 });
-        this.rightSound = new eui.Image(RES.getRes('shengyin_png'));
+        this.rightSound = new eui.Image(RES.getRes('musicClose_png'));
         Global.painting(this, this.rightSound, { x: 1014, y: 53 });
         this.rightSound.touchEnabled = true;
         this.rightSound.addEventListener(egret.TouchEvent.TOUCH_TAP, (e) => {
             this.switchOpen = !this.switchOpen;
             if (this.switchOpen) {
-                this.play();
-            } else {
                 this.stop();
+            } else {
+                this.play();
             }
-            this.rightSound.source = this.switchOpen ? RES.getRes('shengyin_png') : RES.getRes('musicClose_png');
+            this.rightSound.source = this.switchOpen ? RES.getRes('musicClose_png') : RES.getRes('shengyin_png');
         }, this);
     }
 }

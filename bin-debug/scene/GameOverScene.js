@@ -17,7 +17,7 @@ var GameOverScene = (function (_super) {
         _super.prototype.childrenCreated.call(this);
         this.init();
     };
-    //初始化  越大越快
+    //初始化 
     GameOverScene.prototype.init = function () {
         var optionss = JSON.parse(egret.localStorage.getItem('arrayBtn')) || [10, 6, 8, 9, 1, 5, 7, 2, 4, 3];
         this.gameOther = new gameOther();

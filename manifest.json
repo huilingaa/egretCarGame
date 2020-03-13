@@ -11,21 +11,19 @@
 	],
 	"game": [
 		"bin-debug/BaseObject.js",
-		"bin-debug/components/btnSort.js",
+		"bin-debug/components/BaseCar.js",
 		"bin-debug/Global.js",
 		"bin-debug/LoadingUI.js",
 		"bin-debug/Main.js",
 		"bin-debug/Platform.js",
 		"bin-debug/ThemeAdapter.js",
-		"bin-debug/components/BaseCar.js",
 		"bin-debug/AssetAdapter.js",
+		"bin-debug/components/btnSort.js",
 		"bin-debug/components/comFrame.js",
 		"bin-debug/components/startCar.js",
 		"bin-debug/scene/GameOverScene.js",
 		"bin-debug/scene/GameScene.js",
 		"bin-debug/scene/GameStartScene.js",
-		"bin-debug/sound/demo.js",
-		"bin-debug/sound/Sound.js",
 		"bin-debug/tool/tool.js"
 	]
 }

@@ -8,10 +8,10 @@ class GameOverScene extends eui.Component implements eui.UIComponent {
 		super.childrenCreated();
 		this.init()
 	}
-	//初始化  越大越快
+	//初始化 
 	private init() {
 		var optionss = JSON.parse(egret.localStorage.getItem('arrayBtn')) || [10, 6, 8, 9, 1, 5, 7, 2, 4, 3];
-		this.gameOther = new gameOther()
+		this.gameOther = new gameOther();
 		this.gameOther.onFont('20200221173', '11:45', 'playOver');
 		this.addChild(this.gameOther)
 		var btnAry = []; var tempAry = [];
